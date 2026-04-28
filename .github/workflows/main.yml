@@ -1,0 +1,40 @@
+name: Unity Debug
+
+on: 
+  push: 
+    branches: [ debug ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: LFS
+        run: git lfs pull
+
+      - name: Cache Library
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-WebGL-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+
+      - name: Build WebGL
+        uses: game-ci/unity-builder@v3
+        env: 
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+          buildProfiles: WebGL-Debug
+          unityVersion: 6000.3.8f1
+
+      - name: Upload Itch
+        uses: josephbmanley/butler-publish-itchio-action@v1
+        with:
+          api-key: ${{ secrets.BUTLER_API_KEY }}
+          itch-user: NikaZ
+          itch-game: Reacative_Test
+          build-dir: build/WebGL
+          channel: web
