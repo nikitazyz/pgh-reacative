@@ -31,10 +31,10 @@ jobs:
           unityVersion: 6000.3.8f1
 
       - name: Upload Itch
-        uses: josephbmanley/butler-publish-itchio-action@v1
+        uses: Ayowel/butler-to-itch@v1
         with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          itch-user: NikaZ
-          itch-game: Reacative_Test
-          build-dir: build/WebGL
-          channel: web
+          butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
+          itch_user: Ayowel
+          itch_game: renpy-extensions-demo
+          version: ${{ github.ref_name }}
+          files: web 
