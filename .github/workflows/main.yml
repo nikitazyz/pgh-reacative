@@ -22,13 +22,14 @@ jobs:
           key: Library-WebGL-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
 
       - name: Build WebGL
-        uses: game-ci/unity-builder@v3
+        uses: game-ci/unity-builder@v4
         env: 
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          buildProfiles: WebGL-Debug
-          unityVersion: 6000.3.8f1
+          buildProfiles: 'Assets/Settings/Build Profiles/WebGL-Debug.asset'
 
       - name: Upload Itch
         uses: Ayowel/butler-to-itch@v1
