@@ -34,8 +34,7 @@ jobs:
       - name: Upload Itch
         uses: Ayowel/butler-to-itch@v1
         with:
-          butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
-          itch_user: Ayowel
-          itch_game: renpy-extensions-demo
-          version: ${{ github.ref_name }}
-          files: web 
+          butler_key: ${{ secrets.BUTLER_API_KEY }}
+          itch_user: NikaZ
+          itch_game: reacative-test
+          files: web build/*
