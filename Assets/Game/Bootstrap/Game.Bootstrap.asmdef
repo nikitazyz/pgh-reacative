@@ -1,0 +1,9 @@
+{
+  "name": "Game.Bootstrap",
+  "references": [
+    "GUID:0b95be1afa60ad62d9f3a833a0b753d2",
+    "GUID:63d33d78aeee4719b8419216b491c050",
+    "GUID:8604f1385d1d4f438f9c1ef648691acc"
+  ],
+  "rootNamespace": "Reacative.Bootstrap"
+}

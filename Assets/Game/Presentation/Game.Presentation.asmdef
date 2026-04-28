@@ -1,0 +1,13 @@
+{
+  "name": "Game.Presentation",
+  "references": [
+    "GUID:0b95be1afa60ad62d9f3a833a0b753d2",
+    "GUID:63d33d78aeee4719b8419216b491c050",
+    "GUID:75469ad4d38634e559750d17036d5f7c",
+    "GUID:44bbaea828107464a9865b1131477333",
+    "GUID:6055be8ebefd69e48b49212b09b47b2f",
+    "GUID:80ecb87cae9c44d19824e70ea7229748"
+  ],
+  "autoReferenced": true,
+  "rootNamespace": "Reacative.Presentation"
+}

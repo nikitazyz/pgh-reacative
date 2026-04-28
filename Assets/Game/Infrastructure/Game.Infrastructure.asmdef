@@ -1,0 +1,8 @@
+{
+  "name": "Game.Infrastructure",
+  "rootNamespace": "Reacative.Infrastructure",
+  "references": [
+    "GUID:0b95be1afa60ad62d9f3a833a0b753d2",
+    "GUID:f282893cf57b43a58a32bec789c96d96"
+  ]
+}
