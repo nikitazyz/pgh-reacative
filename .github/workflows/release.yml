@@ -1,4 +1,4 @@
-name: Unity Debug
+name: Unity Release
 
 on: 
   push: 
