@@ -21,12 +21,15 @@ namespace Reacative.Infrastructure.Factories
             new TurbineState(
                 0,
                 false,
-                0
+                0,
+                false
             ),
             new CoolerState(
                 0,
-                new List<string>().ToImmutableList()
+                new List<string>().ToImmutableList(),
+                false
             ),
+            new LabState(false),
             new List<CatDefinition>().ToImmutableList(),
             new EventTimeline(new List<ITimelineEvent>().ToImmutableList()));
         }

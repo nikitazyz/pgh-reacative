@@ -3,8 +3,9 @@ namespace Reacative.Domain.State
     public record TurbineState(
         int Level,
         bool IsActive,
-        long ActivationTime
-    )
+        long ActivationTime,
+        bool IsBought
+    ) : IPurchasableBuildingState
     {
         public override string ToString()
         {
@@ -12,5 +13,8 @@ namespace Reacative.Domain.State
             $"IsActive: {IsActive}\n" +
             $"ActiveTime: {ActivationTime}";
         }
+
+        public static readonly string ID = "turbine";
+        public string Id => ID;
     }
 }

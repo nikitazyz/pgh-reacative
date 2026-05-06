@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcd3cb2b215e499c975a585c6e810b4c, type: 3}
-  m_Name: Turbine
+  m_Name: Lab
   m_EditorClassIdentifier: Game.Infrastructure::Reacative.Infrastructure.Buildings.BuildingConfig
   _icon: {fileID: 0}
-  _name: Turbine
+  _name: lab
   _description: 100
   _cost: 10

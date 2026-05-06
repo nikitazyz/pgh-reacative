@@ -46,7 +46,7 @@ namespace Reacative.Domain
             OnStateChanged?.Invoke(oldState, _currentState);
         }
         
-        public void SetState(GameState newState)
+        internal void SetState(GameState newState)
         {
             _currentState = newState;
             Update();

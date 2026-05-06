@@ -1,5 +1,8 @@
 using Reacative.Domain;
+using Reacative.Domain.Definitions;
+using Reacative.Domain.State;
 using Reacative.Infrastructure;
+using Reacative.Infrastructure.Buildings;
 using Reacative.Infrastructure.Configs;
 using Reacative.Infrastructure.Factories;
 using Reacative.Infrastructure.Services;
@@ -17,11 +20,16 @@ namespace Reacative.Bootstrap
             var timeProvider = new TimeProvider();
             var config = LoadConfig();
             var uiConfig = LoadUIConfig();
+            var gameSession = new GameSession(timeProvider, config);
+            var buildingShop = new BuildingShop(gameSession);
 
             ServiceLocator.RegisterService(config);
             ServiceLocator.RegisterService(uiConfig);
-            ServiceLocator.RegisterService(new GameSession(timeProvider, config));
+            ServiceLocator.RegisterService(gameSession);
             ServiceLocator.RegisterService(timeProvider);
+            ServiceLocator.RegisterService(buildingShop);
+            
+            SetupPurchasableBuildings(buildingShop);
         }
 
         public static void GameInit()
@@ -37,7 +45,7 @@ namespace Reacative.Bootstrap
             };
             //GameObject.DontDestroyOnLoad(gameObject);
             var gameLoop = gameObject.AddComponent<GameLoop>();
-            gameLoop.Init(gameSession.CurrentGame);
+            gameLoop.Init(gameSession.CurrentGame, uiConfig.UpdateInterval);
             
             SetupUI(gameSession.CurrentGame, uiConfig);
 
@@ -49,6 +57,13 @@ namespace Reacative.Bootstrap
             var resourceController = new ResourceDisplayController(game);
             var ui = Object.Instantiate(config.ResourceDisplay);
             resourceController.Assign(ui);
+        }
+
+        public static void SetupPurchasableBuildings(BuildingShop shop)
+        {
+            shop.RegisterDefinition(LabState.ID, new LabDefinition(100));
+            shop.RegisterDefinition(CoolerState.ID, new CoolerDefinition(100));
+            shop.RegisterDefinition(TurbineState.ID, new TurbineDefinition(100));
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]

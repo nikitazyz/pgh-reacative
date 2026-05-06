@@ -21,8 +21,8 @@ namespace Reacative.Presentation.InteractionSystem
         {
             var mousePosition = Mouse.current.position.ReadValue();
 
-            var isOverUI = EventSystem.current.IsPointerOverGameObject();
-            if (isOverUI)
+            var isOverUI = EventSystem.current?.IsPointerOverGameObject();
+            if (isOverUI == true)
             {
                 ExitLast(null);
                 _lastHitObject = null;

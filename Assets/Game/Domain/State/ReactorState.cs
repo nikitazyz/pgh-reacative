@@ -8,7 +8,7 @@ namespace Reacative.Domain.State
         double Temperature,
         bool IsActive,
         ImmutableList<string> ActiveCats
-    ) : ICatsContainerState
+    ) : ICatsContainerState, IBuildingState
     {
         IReadOnlyCollection<string> ICatsContainerState.ActiveCats => ActiveCats;
 
@@ -16,5 +16,8 @@ namespace Reacative.Domain.State
         {
             return $"Level: {Level}\nTemp: {Temperature}\nIs Active: {IsActive}";
         }
+
+        public static readonly string ID = "reactor";
+        public string Id => ID;
     }
 }

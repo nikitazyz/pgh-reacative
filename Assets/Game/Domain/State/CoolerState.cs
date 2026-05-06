@@ -5,8 +5,9 @@ namespace Reacative.Domain.State
 {
     public record CoolerState(
         int Level,
-        ImmutableList<string> ActiveCats
-    ) : ICatsContainerState
+        ImmutableList<string> ActiveCats,
+        bool IsBought
+    ) : ICatsContainerState, IPurchasableBuildingState
     {
         IReadOnlyCollection<string> ICatsContainerState.ActiveCats => ActiveCats;
 
@@ -14,5 +15,8 @@ namespace Reacative.Domain.State
         {
             return $"Level: {Level}";
         }
+
+        public static readonly string ID = "cooler";
+        public string Id => ID;
     }
 }
