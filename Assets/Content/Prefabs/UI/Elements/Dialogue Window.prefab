@@ -641,8 +641,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tab name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e5276b8db0c5d2d4182698d8a10c7697, type: 2}
-  m_sharedMaterial: {fileID: -7506536188013328013, guid: e5276b8db0c5d2d4182698d8a10c7697, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1dcf6e46895047044af7777db83a8c2f, type: 2}
+  m_sharedMaterial: {fileID: 5086531219297742627, guid: 1dcf6e46895047044af7777db83a8c2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -7506536188013328013, guid: e5276b8db0c5d2d4182698d8a10c7697, type: 2}
+    - target: {fileID: 32770759906216026, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 5862291827465118841, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -840,6 +844,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -7506536188013328013, guid: e5276b8db0c5d2d4182698d8a10c7697, type: 2}
+    - target: {fileID: 32770759906216026, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 5862291827465118841, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
       propertyPath: m_Pivot.x
       value: 1

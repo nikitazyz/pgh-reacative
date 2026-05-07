@@ -47,6 +47,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
                 return;
             }
             _offset = (Vector2)transform.position - data.position;
+            transform.SetAsLastSibling();
         }
 
         private void OnDragEnd(PointerEventData data)
