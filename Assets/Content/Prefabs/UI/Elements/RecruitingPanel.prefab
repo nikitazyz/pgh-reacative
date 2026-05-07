@@ -181,7 +181,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -8
+  m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 8192
   m_textAlignment: 65535
-  m_characterSpacing: -8
+  m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -447,10 +447,6 @@ PrefabInstance:
     - target: {fileID: 32770759906216026, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
       propertyPath: m_fontSizeBase
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 32770759906216026, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 32770759906216026, guid: a1ec312c7df8c1440822f5a24031623e, type: 3}
       propertyPath: m_fontColor32.rgba

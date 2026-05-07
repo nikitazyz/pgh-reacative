@@ -347,10 +347,6 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u041D\u0430\u043D\u044F\u0442\u044C"
       objectReference: {fileID: 0}
-    - target: {fileID: 4449091629627415, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8
-      objectReference: {fileID: 0}
     - target: {fileID: 1389594840472687470, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
       propertyPath: m_Name
       value: CatPanel
@@ -456,10 +452,6 @@ PrefabInstance:
     - target: {fileID: 4449091629627415, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
       propertyPath: m_text
       value: "\u041D\u0430\u043D\u044F\u0442\u044C"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4449091629627415, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1389594840472687470, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
       propertyPath: m_Name
@@ -675,10 +667,6 @@ PrefabInstance:
     - target: {fileID: 4449091629627415, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
       propertyPath: m_text
       value: "\u041D\u0430\u043D\u044F\u0442\u044C"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4449091629627415, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1389594840472687470, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}
       propertyPath: m_Name
