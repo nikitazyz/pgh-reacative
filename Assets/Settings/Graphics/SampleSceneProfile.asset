@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.205
+    m_Value: 0.083
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.WhiteBalance
-  active: 1
+  active: 0
   temperature:
     m_OverrideState: 1
     m_Value: 15
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChromaticAberration
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.055
+    m_Value: 0.02
 --- !u!114 &-3357603926938260329
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -266,7 +266,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.087
+    m_Value: 0.114
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1

@@ -12,18 +12,18 @@ namespace Reacative.Presentation.UI.WindowsSystem
 
             return Sequence.Create()
                 .Group(Tween.Scale(target.transform, new TweenSettings<Vector3>(Vector3.zero, duration, ease)))
-                .Group(Tween.PositionY(target.transform, new TweenSettings<float>(targetHeight, 0.15f, ease)));
+                .Group(Tween.LocalPositionY(target.transform, new TweenSettings<float>(targetHeight, 0.15f, ease)));
         }
 
         public static Sequence FromBottom(VirtualWindow target, float duration = 0.15f, Ease ease = Ease.OutCirc)
         {
             target.transform.localScale = new Vector3(0, 0, 0);
-            var targetPosition = target.transform.position;
-            target.transform.position = new Vector3(targetPosition.x, -target.WindowSize.y/2-10f, 0);
+            var targetPosition = target.transform.localPosition;
+            target.transform.localPosition = new Vector3(targetPosition.x, -target.WindowSize.y/2-10f, 0);
 
             return Sequence.Create()
                 .Group(Tween.Scale(target.transform, new TweenSettings<Vector3>(Vector3.one, duration, ease)))
-                .Group(Tween.PositionY(target.transform,
+                .Group(Tween.LocalPositionY(target.transform,
                     new TweenSettings<float>(targetPosition.y, duration, ease)));
         }
         

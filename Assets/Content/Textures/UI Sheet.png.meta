@@ -659,6 +659,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI Sheet_button_outline
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 359
+        width: 76
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8d87cea0382f94782ba9dfc8ad7b3b
+      internalID: -1274514947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Sheet_field
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 324
+        width: 67
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69dff412659a5f748bc28d39de7c17c1
+      internalID: 459689661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -685,11 +729,13 @@ TextureImporter:
       UI Sheet_button_info: -969004368
       UI Sheet_button_no: -1418765388
       UI Sheet_button_no_dark: -30870002
+      UI Sheet_button_outline: -1274514947
       UI Sheet_button_takeoff: -1124337583
       UI Sheet_button_wear: 1815039137
       UI Sheet_button_yes: -2013350339
       UI Sheet_button_yes_dark: 2147293856
       UI Sheet_dark_bg: 1142593731
+      UI Sheet_field: 459689661
       UI Sheet_light_bg: 1317811920
       UI Sheet_pane_dark: 1438962355
       UI Sheet_panel: 674998379

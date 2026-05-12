@@ -46,7 +46,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
             {
                 return;
             }
-            _offset = (Vector2)transform.position - data.position;
+            _offset = (Vector2)transform.position - CameraToCursorPosition(data.position);
             transform.SetAsLastSibling();
         }
 
@@ -56,7 +56,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
             {
                 return;
             }
-            var newPosition = data.position + _offset;
+            var newPosition = CameraToCursorPosition(data.position) + _offset;
             transform.position = newPosition;
 
             ClampPosition();
@@ -68,8 +68,19 @@ namespace Reacative.Presentation.UI.WindowsSystem
             {
                 return;
             }
-            var newPosition = data.position + _offset;
+            var newPosition = CameraToCursorPosition(data.position) + _offset;
             transform.position = newPosition;
+        }
+
+        public Vector2 CameraToCursorPosition(Vector2 cursorPosition)
+        {
+            var camera = GetComponentInParent<Canvas>().worldCamera;
+            if (!camera)
+            {
+                return cursorPosition;
+            }
+            
+            return camera.ScreenToWorldPoint(cursorPosition);
         }
 
         private void ClampPosition()
@@ -137,6 +148,19 @@ namespace Reacative.Presentation.UI.WindowsSystem
                         target.OnClosed();
                         target.transform.localPosition = savedPosition;
                     });
+            }
+        }
+
+        public void Toggle()
+        {
+            switch (WindowState)
+            {
+                case WindowState.Closed:
+                    Open();
+                    break;
+                case WindowState.Opened:
+                    Close();
+                    break;
             }
         }
 
