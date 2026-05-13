@@ -13,6 +13,7 @@ namespace Reacative.Domain.CommandSystem
 
         public void Execute(Game game)
         {
+            game.Update();
             if (!IsValid(game))
             {
                 return;

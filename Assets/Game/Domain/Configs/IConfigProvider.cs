@@ -4,5 +4,6 @@ namespace Reacative.Domain.Configs
     {
         public IReactorConfigProvider ReactorConfig { get; }
         public ITurbineConfigProvider TurbineConfig { get; }
+        public IGeneratorConfigProvider GeneratorConfig { get; }
     }
 }

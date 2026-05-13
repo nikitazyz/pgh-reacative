@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using Reacative.Domain.Cats;
 using Reacative.Domain.EventSystem;
 using Reacative.Domain.State;
 
@@ -30,7 +29,7 @@ namespace Reacative.Infrastructure.Factories
                 false
             ),
             new LabState(false),
-            new List<CatDefinition>().ToImmutableList(),
+            new GeneratorState(1),
             new EventTimeline(new List<ITimelineEvent>().ToImmutableList()));
         }
     }

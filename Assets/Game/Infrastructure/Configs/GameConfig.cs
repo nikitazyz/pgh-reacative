@@ -8,8 +8,10 @@ namespace Reacative.Infrastructure.Configs
     {
         [SerializeField] private ReactorConfig _reactor;
         [SerializeField] private TurbineConfig _turbine;
+        [SerializeField] private GeneratorConfig _generatorConfig;
 
         public IReactorConfigProvider ReactorConfig => _reactor;
         public ITurbineConfigProvider TurbineConfig => _turbine;
+        public IGeneratorConfigProvider GeneratorConfig => _generatorConfig;
     }
 }

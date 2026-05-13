@@ -86,6 +86,10 @@ namespace Reacative.Domain.Simulation
                 {
                     IsActive = !simulationContext.ShouldStopTurbine && gameState.TurbineState.IsActive
                 },
+                GeneratorState = gameState.GeneratorState with
+                {
+                    Power = simulationContext.GeneratorPower
+                },
                 LastUpdateTime = targetTime
             };
         }

@@ -20,6 +20,11 @@ namespace Reacative.Domain.CommandSystem
                 return;
             }
 
+            if (game.CurrentState.GeneratorState.Power == 0)
+            {
+                return;
+            }
+
             var state = game.CurrentState;
 
             state = state with

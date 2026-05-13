@@ -28,7 +28,8 @@ namespace Reacative.Domain
             var simulationSystems = new ISimulationSystem[]
             {
                 new ReactorSimulation(configProvider.ReactorConfig),
-                new TurbineSimulation(configProvider.TurbineConfig)
+                new TurbineSimulation(configProvider.TurbineConfig),
+                new GeneratorSimulation(configProvider.GeneratorConfig)
             };
             _simulator = new Simulator(null, simulationSystems);
             _timeProvider = timeProvider;
