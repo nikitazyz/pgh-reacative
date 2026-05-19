@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a76a2b270a493093ab53b1b348c230, type: 3}
   m_Name: UIConfig
   m_EditorClassIdentifier: Game.Presentation::Reacative.Presentation.Configs.UIConfig
-  _resourceDisplay: {fileID: 485060206507409948, guid: ce588436b46370e48b5975e01944b004, type: 3}
+  _updateInterval: 0.2
+  _mainView: {fileID: 6811652506676540262, guid: 93d4c7723ba0a284a95e84691463b74c, type: 3}
+  _cameraService: {fileID: 6504661932196666925, guid: 153811e6a112bcd479f954e2b9b0182b, type: 3}
+  _recruitingWindow: {fileID: 1103338856626719257, guid: f7d78a1dea23ac04db4946f829c01971, type: 3}

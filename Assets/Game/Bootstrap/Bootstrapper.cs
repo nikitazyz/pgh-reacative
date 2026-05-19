@@ -50,19 +50,13 @@ namespace Reacative.Bootstrap
             var gameLoop = gameObject.AddComponent<GameLoop>();
             gameLoop.Init(gameSession.CurrentGame, uiConfig.UpdateInterval);
             
-            SetupUI(gameSession.CurrentGame, uiConfig);
+            var cameraService = Object.Instantiate(uiConfig.CameraService);
+            UISetup.Init(gameSession.CurrentGame, cameraService.UICamera, uiConfig);
 
             Debug.Log("Game initialized");
         }
 
-        public static void SetupUI(Game game, UIConfig config)
-        {
-            var resourceController = new ResourceDisplayController(game);
-            var ui = Object.Instantiate(config.ResourceDisplay);
-            resourceController.Assign(ui);
-        }
-
-        public static void SetupPurchasableBuildings(BuildingShop shop)
+        private static void SetupPurchasableBuildings(BuildingShop shop)
         {
             shop.RegisterDefinition(LabState.ID, new LabDefinition(100));
             shop.RegisterDefinition(CoolerState.ID, new CoolerDefinition(100));

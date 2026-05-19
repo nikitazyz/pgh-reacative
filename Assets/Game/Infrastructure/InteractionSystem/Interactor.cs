@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-namespace Reacative.Presentation.InteractionSystem
+namespace Reacative.Infrastructure.InteractionSystem
 {
     public class Interactor : MonoBehaviour
     {

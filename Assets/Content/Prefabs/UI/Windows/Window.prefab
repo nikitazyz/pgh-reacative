@@ -106,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3829256107082056140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   _closeButton: {fileID: 1926163782921589967}
   _dragTab: {fileID: 6791779214702334800}
   _title: {fileID: 6908531861796811749}
+  _startPosition: {x: 0, y: 0}
   _openAnimation: 2
   _closeAnimation: 1
 --- !u!1 &2687514166540990388

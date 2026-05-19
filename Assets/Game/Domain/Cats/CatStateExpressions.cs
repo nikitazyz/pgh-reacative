@@ -1,3 +1,4 @@
+using System.Linq;
 using Reacative.Domain.State;
 
 namespace Reacative.Domain.Cats
@@ -7,6 +8,16 @@ namespace Reacative.Domain.Cats
         public static bool IsCatHired(this GameState gameState, CatState catState)
         {
             return gameState.HiredCats.Contains(catState.Name);
+        }
+
+        public static CatState[] GetHiredCats(this GameState gameState)
+        {
+            return gameState.GeneratedCats.Where(c => IsCatHired(gameState, c)).ToArray();
+        }
+
+        public static CatState[] GetAvailableCats(this GameState gameState)
+        {
+            return gameState.GeneratedCats.Where(c => !IsCatHired(gameState, c)).ToArray();
         }
     }
 }

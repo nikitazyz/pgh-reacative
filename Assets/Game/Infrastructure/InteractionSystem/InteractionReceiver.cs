@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
-namespace Reacative.Presentation.InteractionSystem
+namespace Reacative.Infrastructure.InteractionSystem
 {
     public class InteractionReceiver : MonoBehaviour, IInteractableEnter, IInteractableExit
     {

@@ -1,13 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using Reacative.Domain.State;
+using Reacative.Infrastructure.UI.Recruiting;
+using Reacative.Presentation.UI.WindowsSystem;
 using UnityEngine;
 
 namespace Reacative.Presentation.UI
 {
-    public class RecruitingWindow : MonoBehaviour
+    public class RecruitingWindow : VirtualWindow, IRecruitingView
     {
+        [Header("Recruiting Properties")]
         [SerializeField] private RecruitingItem _recruitingTemplate;
         [SerializeField] private Transform _recruitingContainer;
         
@@ -44,6 +48,18 @@ namespace Reacative.Presentation.UI
                 Destroy(item);
             }
             _freeRecruitingItems.Clear();
+        }
+
+        public void SetActive(bool active)
+        {
+            if (active)
+            {
+                Open();
+            }
+            else
+            {
+                Close();
+            }
         }
     }
 }

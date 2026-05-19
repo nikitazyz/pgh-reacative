@@ -1,4 +1,4 @@
-namespace Reacative.Presentation.InteractionSystem
+namespace Reacative.Infrastructure.InteractionSystem
 {
     public interface IInteractableEnter : IInteractable
     {

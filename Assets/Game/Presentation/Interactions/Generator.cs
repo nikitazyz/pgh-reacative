@@ -1,8 +1,8 @@
 using Reacative.Domain.CommandSystem;
 using Reacative.Domain.State;
 using Reacative.Infrastructure;
+using Reacative.Infrastructure.InteractionSystem;
 using Reacative.Infrastructure.Services;
-using Reacative.Presentation.InteractionSystem;
 using UnityEngine;
 using UnityEngine.UI;
 

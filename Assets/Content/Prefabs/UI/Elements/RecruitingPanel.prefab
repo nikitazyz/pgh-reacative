@@ -104,10 +104,17 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
-    m_LocalVariables: []
+    m_LocalVariables:
+    - name: cost
+      variable:
+        rid: 6141579921020944460
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6141579921020944460
+      type: {class: IntVariable, ns: UnityEngine.Localization.SmartFormat.PersistentVariables, asm: Unity.Localization}
+      data:
+        m_Value: 0
 --- !u!1 &3486765796538212533
 GameObject:
   m_ObjectHideFlags: 0

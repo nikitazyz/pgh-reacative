@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Reacative.Presentation.InteractionSystem;
+using Reacative.Infrastructure.CameraSetup;
+using Reacative.Infrastructure.InteractionSystem;
+using Reacative.Infrastructure.Services;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -14,15 +16,15 @@ namespace Reacative.Presentation.UI.Cursor
         [SerializeField] private Image _image;
         [SerializeField] private Sprite _normal;
         [SerializeField] private Sprite _hover;
-
-        [SerializeField] private Interactor _interactor;
         
         private RectTransform _rectTransform;
 
-        private void Awake()
+        private void Start()
         {
-            _interactor.InteractEnter += (_) => SetCursor(_hover);
-            _interactor.InteractExit += (_) => SetCursor(_normal);
+            var cameraService = ServiceLocator.GetService<ICameraService>();
+            var interactor = cameraService.Interactor;
+            interactor.InteractEnter += (_) => SetCursor(_hover);
+            interactor.InteractExit += (_) => SetCursor(_normal);
             
             UnityEngine.Cursor.lockState = CursorLockMode.Confined;
             UnityEngine.Cursor.visible = false;

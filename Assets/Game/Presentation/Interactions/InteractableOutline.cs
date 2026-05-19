@@ -1,4 +1,4 @@
-using Reacative.Presentation.InteractionSystem;
+using Reacative.Infrastructure.InteractionSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
 
