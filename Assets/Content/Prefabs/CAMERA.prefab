@@ -61,14 +61,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0.03
-    y: 0.11
+    y: 0.05
     width: 0.823
-    height: 0.79
+    height: 0.9
   near clip plane: 0.3
   far clip plane: 1
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -254,9 +254,9 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60.000004
-    OrthographicSize: 10
+    OrthographicSize: 15
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -365,9 +365,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0.03
-    y: 0.11
+    y: 0.05
     width: 0.823
-    height: 0.79
+    height: 0.9
   near clip plane: 0.3
   far clip plane: 1
   field of view: 60
@@ -495,19 +495,19 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.03
+    y: 0.05
+    width: 0.823
+    height: 0.9
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -543,14 +543,16 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 2329567616446704407}
+  - {fileID: 1518691337884209485}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

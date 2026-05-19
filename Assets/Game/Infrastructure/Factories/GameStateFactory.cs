@@ -30,6 +30,8 @@ namespace Reacative.Infrastructure.Factories
             ),
             new LabState(false),
             new GeneratorState(1),
+            new List<CatState>().ToImmutableList(),
+            new List<string>().ToImmutableList(),
             new EventTimeline(new List<ITimelineEvent>().ToImmutableList()));
         }
     }

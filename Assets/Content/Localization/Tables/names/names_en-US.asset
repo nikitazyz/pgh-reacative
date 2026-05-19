@@ -10,32 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: ui_en-US
+  m_Name: names_en-US
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
   m_LocaleId:
     m_Code: en-US
-  m_SharedData: {fileID: 11400000, guid: 6b14483188eac9f4eb36f83e9ad57224, type: 2}
+  m_SharedData: {fileID: 11400000, guid: fe3651d2f8436a248917b5cb9dea4c5e, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 188662931456
-    m_Localized: Level
+  - m_Id: 10585366528
+    m_Localized: Nikita
     m_Metadata:
       m_Items: []
-  - m_Id: 495224610816
-    m_Localized: Buy
+  - m_Id: 64335372288
+    m_Localized: Maxim
     m_Metadata:
       m_Items: []
-  - m_Id: 636845285376
-    m_Localized: Yes
+  - m_Id: 274029600768
+    m_Localized: Liza
     m_Metadata:
       m_Items: []
-  - m_Id: 676699561984
-    m_Localized: No
-    m_Metadata:
-      m_Items: []
-  - m_Id: 710765699072
-    m_Localized: Cancel
+  - m_Id: 384079749120
+    m_Localized: Vita
     m_Metadata:
       m_Items: []
   references:

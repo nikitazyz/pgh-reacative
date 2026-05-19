@@ -35,6 +35,14 @@ MonoBehaviour:
     m_Key: cancel
     m_Metadata:
       m_Items: []
+  - m_Id: 2367271526719488
+    m_Key: hire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2372965088878592
+    m_Key: cost
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

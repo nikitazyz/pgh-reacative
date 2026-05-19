@@ -10,32 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: ui_ru-RU
+  m_Name: names_ru-RU
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
   m_LocaleId:
     m_Code: ru-RU
-  m_SharedData: {fileID: 11400000, guid: 6b14483188eac9f4eb36f83e9ad57224, type: 2}
+  m_SharedData: {fileID: 11400000, guid: fe3651d2f8436a248917b5cb9dea4c5e, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 188662931456
-    m_Localized: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C"
+  - m_Id: 10585366528
+    m_Localized: "\u041D\u0438\u043A\u0438\u0442\u0430"
     m_Metadata:
       m_Items: []
-  - m_Id: 495224610816
-    m_Localized: "\u041A\u0443\u043F\u0438\u0442\u044C"
+  - m_Id: 64335372288
+    m_Localized: "\u041C\u0430\u043A\u0441\u0438\u043C"
     m_Metadata:
       m_Items: []
-  - m_Id: 636845285376
-    m_Localized: "\u0414\u0430"
+  - m_Id: 274029600768
+    m_Localized: "\u041B\u0438\u0437\u0430"
     m_Metadata:
       m_Items: []
-  - m_Id: 676699561984
-    m_Localized: "\u041D\u0435\u0442"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 710765699072
-    m_Localized: "\u043E\u0442\u043C\u0435\u043D\u0430"
+  - m_Id: 384079749120
+    m_Localized: "\u0412\u0438\u0442\u0430"
     m_Metadata:
       m_Items: []
   references:

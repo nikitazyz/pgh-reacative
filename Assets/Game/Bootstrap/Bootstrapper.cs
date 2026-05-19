@@ -3,6 +3,7 @@ using Reacative.Domain.Definitions;
 using Reacative.Domain.State;
 using Reacative.Infrastructure;
 using Reacative.Infrastructure.Buildings;
+using Reacative.Infrastructure.Cats;
 using Reacative.Infrastructure.Configs;
 using Reacative.Infrastructure.Factories;
 using Reacative.Infrastructure.Services;
@@ -15,19 +16,21 @@ namespace Reacative.Bootstrap
 {
     public static class Bootstrapper
     {
-        public static void SystemsInit()
+        private static void SystemsInit()
         {
             var timeProvider = new TimeProvider();
             var config = LoadConfig();
             var uiConfig = LoadUIConfig();
             var gameSession = new GameSession(timeProvider, config);
             var buildingShop = new BuildingShop(gameSession);
+            var catsManager = new CatsManager(gameSession, config.CatsConfig);
 
             ServiceLocator.RegisterService(config);
             ServiceLocator.RegisterService(uiConfig);
             ServiceLocator.RegisterService(gameSession);
             ServiceLocator.RegisterService(timeProvider);
             ServiceLocator.RegisterService(buildingShop);
+            ServiceLocator.RegisterService(catsManager);
             
             SetupPurchasableBuildings(buildingShop);
         }

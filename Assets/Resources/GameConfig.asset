@@ -15,3 +15,4 @@ MonoBehaviour:
   _reactor: {fileID: 11400000, guid: 7dfac1c3844487df9a652531fa9ca345, type: 2}
   _turbine: {fileID: 11400000, guid: 4edcbe3705d3f724d93361655c2c5a8a, type: 2}
   _generatorConfig: {fileID: 11400000, guid: 178cd3ceff6ec2849a324c9c83cb514d, type: 2}
+  _catsConfig: {fileID: 11400000, guid: b9d431585e2d7634e99987f5a54d4350, type: 2}

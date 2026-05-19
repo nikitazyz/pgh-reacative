@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using Reacative.Domain.Cats;
+using Reacative.Domain;
 using Reacative.Domain.EventSystem;
 
 namespace Reacative.Domain.State
@@ -12,7 +12,9 @@ namespace Reacative.Domain.State
         TurbineState TurbineState,
         CoolerState CoolerState,
         LabState LabState,
-        ImmutableList<CatDefinition> AvailableCats,
+        GeneratorState GeneratorState,
+        ImmutableList<CatState> GeneratedCats,
+        ImmutableList<string> HiredCats,
         EventTimeline EventTimeline
     )
     {
