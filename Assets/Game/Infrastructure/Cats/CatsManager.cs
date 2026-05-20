@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Reacative.Domain;
 using Reacative.Domain.Cats;
 using Reacative.Domain.CommandSystem;
 using Reacative.Domain.Configs;
 using Reacative.Domain.State;
 using Reacative.Infrastructure.Services;
+using UnityEngine;
 
 namespace Reacative.Infrastructure.Cats
 {
@@ -20,17 +22,17 @@ namespace Reacative.Infrastructure.Cats
         private Game Game => _gameSession.CurrentGame;
         private GameState GameState => Game.CurrentState;
 
-        public CatsManager(GameSession session, ICatsConfigProvider config)
+        public CatsManager(GameSession session, ICatsConfigProvider configProvider)
         {
-            var nameGenerator = new CatNameGenerator(config.Names.ToList());
+            var nameGenerator = new CatNameGenerator(configProvider);
             var colorGenerator = new CatColorGenerator();
             _catsGenerator = new CatsGenerator(nameGenerator, colorGenerator);
             _gameSession = session;
 
-            HeadHunterSize = config.HeadHunterSize;
+            HeadHunterSize = configProvider.HeadHunterSize;
         }
 
-        public void RefillHeadHunter()
+        public async UniTask RefillHeadHunter()
         {
             var generatedCatsCount = GameState.GeneratedCats.Count;
             var hiredCatsCount = GameState.HiredCats.Count;
@@ -41,7 +43,7 @@ namespace Reacative.Infrastructure.Cats
                 return;
             }
             
-            var cats = _catsGenerator.GetNext(GameState, createCount);
+            var cats = await _catsGenerator.GetNext(GameState, createCount);
             var addCatsCommand = new AddGeneratedCatsCommand(cats);
             
             Game.ExecuteCommand(addCatsCommand);

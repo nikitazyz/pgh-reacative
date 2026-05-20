@@ -5,10 +5,10 @@ namespace Reacative.Infrastructure.Localization
 {
     public static class LocalizationParser
     {
-        public static string ToLocalizationKey(this LocalizedReference localizedReference)
+        public static string ToLocalizationKey(this LocalizedString localizedReference)
         {
             return
-                $"{localizedReference.TableReference.TableCollectionName}:{localizedReference.TableEntryReference.Key}";
+                $"{localizedReference.TableReference.TableCollectionName}:{localizedReference.TableEntryReference}";
         }
 
         public static LocalizedString ToLocalizedString(string localizationKey)

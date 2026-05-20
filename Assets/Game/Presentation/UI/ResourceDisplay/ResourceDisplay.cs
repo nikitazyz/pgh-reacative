@@ -8,6 +8,8 @@ namespace Reacative.Presentation.UI
     {
         public abstract void UpdateResources(double energy, double temperature);
 
+        public bool IsActive => gameObject.activeSelf;
+
         public void SetActive(bool active)
         {
             gameObject.SetActive(active);

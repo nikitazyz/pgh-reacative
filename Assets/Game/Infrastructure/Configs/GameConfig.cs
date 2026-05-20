@@ -15,6 +15,6 @@ namespace Reacative.Infrastructure.Configs
         public IReactorConfigProvider ReactorConfig => _reactor;
         public ITurbineConfigProvider TurbineConfig => _turbine;
         public IGeneratorConfigProvider GeneratorConfig => _generatorConfig;
-        public ICatsConfigProvider CatsConfig => _catsConfig;
+        public LocalizedCatConfig CatsConfig => _catsConfig;
     }
 }

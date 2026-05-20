@@ -12,39 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf16394fabcb49ab8d211e8b6e53ae3a, type: 3}
   m_Name: CatsConfig
   m_EditorClassIdentifier: Game.Infrastructure::Reacative.Infrastructure.Configs.Cat.LocalizedCatConfig
-  _names:
-  - m_TableReference:
-      m_TableCollectionName: GUID:fe3651d2f8436a248917b5cb9dea4c5e
-    m_TableEntryReference:
-      m_KeyId: 274029600768
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  - m_TableReference:
-      m_TableCollectionName: GUID:fe3651d2f8436a248917b5cb9dea4c5e
-    m_TableEntryReference:
-      m_KeyId: 64335372288
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  - m_TableReference:
-      m_TableCollectionName: GUID:fe3651d2f8436a248917b5cb9dea4c5e
-    m_TableEntryReference:
-      m_KeyId: 10585366528
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  - m_TableReference:
-      m_TableCollectionName: GUID:fe3651d2f8436a248917b5cb9dea4c5e
-    m_TableEntryReference:
-      m_KeyId: 384079749120
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  references:
-    version: 2
-    RefIds: []
+  <HeadHunterSize>k__BackingField: 3
+  <HireBaseCost>k__BackingField: 10
+  <HireCostMultiplier>k__BackingField: 2
+  _tableReference:
+    m_TableCollectionName: names

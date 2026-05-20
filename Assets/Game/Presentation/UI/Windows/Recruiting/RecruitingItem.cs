@@ -38,7 +38,7 @@ namespace Reacative.Presentation.UI
         {
             _costString.Arguments = new object[]
             {
-                new { cost }
+                cost
             };
 
             await SetCostUI(cost);

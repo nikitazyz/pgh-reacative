@@ -44,6 +44,10 @@ namespace Reacative.Domain
         {
             var oldState = _currentState;
             _currentState = _simulator.Simulate(_currentState, _timeProvider.GetTime());
+            if (oldState.Equals(_currentState))
+            {
+                return;
+            }
             OnStateChanged?.Invoke(oldState, _currentState);
         }
 
@@ -92,8 +96,13 @@ namespace Reacative.Domain
         
         internal void SetState(GameState newState)
         {
+            var oldState = _currentState;
             _currentState = newState;
-            Update();
+            if (oldState.Equals(_currentState))
+            {
+                return;
+            }
+            OnStateChanged?.Invoke(oldState, _currentState);
         }
     }
     

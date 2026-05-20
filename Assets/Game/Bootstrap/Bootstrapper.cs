@@ -1,4 +1,3 @@
-using Reacative.Domain;
 using Reacative.Domain.Definitions;
 using Reacative.Domain.State;
 using Reacative.Infrastructure;
@@ -8,7 +7,6 @@ using Reacative.Infrastructure.Configs;
 using Reacative.Infrastructure.Factories;
 using Reacative.Infrastructure.Services;
 using Reacative.Infrastructure.Time;
-using Reacative.Infrastructure.UI.ResourceDisplay;
 using Reacative.Presentation.Configs;
 using UnityEngine;
 
@@ -23,6 +21,7 @@ namespace Reacative.Bootstrap
             var uiConfig = LoadUIConfig();
             var gameSession = new GameSession(timeProvider, config);
             var buildingShop = new BuildingShop(gameSession);
+
             var catsManager = new CatsManager(gameSession, config.CatsConfig);
 
             ServiceLocator.RegisterService(config);

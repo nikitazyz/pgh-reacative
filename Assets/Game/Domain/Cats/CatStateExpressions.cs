@@ -7,7 +7,7 @@ namespace Reacative.Domain.Cats
     {
         public static bool IsCatHired(this GameState gameState, CatState catState)
         {
-            return gameState.HiredCats.Contains(catState.Name);
+            return gameState.HiredCats.Contains(catState.Id);
         }
 
         public static CatState[] GetHiredCats(this GameState gameState)

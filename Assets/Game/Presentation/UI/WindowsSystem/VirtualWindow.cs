@@ -41,6 +41,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
             _dragTab.DragEnd += OnDragEnd;
             
             _closeButton.onClick.AddListener(Close);
+            gameObject.SetActive(WindowState != WindowState.Closed);
         }
 
         private void OnDragStart(PointerEventData data)

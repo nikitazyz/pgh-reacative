@@ -17,7 +17,7 @@ namespace Reacative.Bootstrap
             var recruitingWindow = Object.Instantiate(config.RecruitingWindow);
             mainWindow.AddTypeWindow(recruitingWindow);
             recruitingController.Assign(recruitingWindow);
-            mainWindow.AddTaskbarButton(() => recruitingWindow.Toggle());
+            mainWindow.AddTaskbarButton(() => recruitingController.SetActive(!recruitingController.IsActive));
         }
     }
 }

@@ -33,12 +33,7 @@ namespace Reacative.Domain.CommandSystem
 
         public bool IsValid(Game game)
         {
-            bool isHired = game.CurrentState.IsCatHired(_catState);
-            if (isHired)
-            {
-                return false;
-            }
-            return true;
+            return !game.CurrentState.IsCatHired(_catState);
         }
     }
 }

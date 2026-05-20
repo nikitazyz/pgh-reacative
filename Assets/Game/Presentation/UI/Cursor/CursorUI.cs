@@ -57,7 +57,6 @@ namespace Reacative.Presentation.UI.Cursor
 
             if (hitObject.GetComponentInParent<Selectable>())
             {
-                Debug.Log(hitObject.name);
                 SetCursor(_hover);
                 return;
             }
