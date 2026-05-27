@@ -15,7 +15,7 @@ namespace Reacative.Infrastructure.Factories
                 0,
                 0,
                 isReactorActiveAtStart,
-                new List<string>().ToImmutableList()
+                ImmutableList<string>.Empty
             ),
             new TurbineState(
                 0,
@@ -25,14 +25,14 @@ namespace Reacative.Infrastructure.Factories
             ),
             new CoolerState(
                 0,
-                new List<string>().ToImmutableList(),
+                ImmutableList<string>.Empty,
                 false
             ),
             new LabState(false),
-            new GeneratorState(1),
-            new List<CatState>().ToImmutableList(),
-            new List<string>().ToImmutableList(),
-            new EventTimeline(new List<ITimelineEvent>().ToImmutableList()));
+            new GeneratorState(1, ImmutableList<string>.Empty),
+            ImmutableList<CatState>.Empty,
+            ImmutableList<string>.Empty,
+            new EventTimeline(ImmutableList<ITimelineEvent>.Empty));
         }
     }
 }

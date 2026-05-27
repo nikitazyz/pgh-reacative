@@ -6,6 +6,6 @@ namespace Reacative.Domain.State
         string Id,
         string Name,
         CatColor Color,
-        bool IsBusy
+        string BuildingId
     );
 }

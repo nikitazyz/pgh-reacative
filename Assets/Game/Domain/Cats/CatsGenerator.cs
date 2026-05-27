@@ -24,7 +24,7 @@ namespace Reacative.Domain.Cats
             for (int i = 0; i < count; i++)
             {
                 var id = Guid.NewGuid().ToString();
-                result[i] = new CatState(id, catName[i], catColor[i], false);
+                result[i] = new CatState(id, catName[i], catColor[i], null);
             }
             return result;
         }

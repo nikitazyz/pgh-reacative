@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Cysharp.Threading.Tasks;
 using Reacative.Domain.State;
+using Reacative.Presentation.Configs;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -20,6 +21,8 @@ namespace Reacative.Presentation.UI
         [SerializeField] private Image _icon;
         [SerializeField] private LocalizedString _costString;
 
+        [SerializeField] private CatsResourcePack _catsResourcePack;
+
         private CatState _catState;
 
         private void Awake()
@@ -32,6 +35,8 @@ namespace Reacative.Presentation.UI
         {
             _catState = catState;
             _label.text = _catState.Name;
+            var icon = _catsResourcePack.GetCatIcon(catState.Color);
+            _icon.sprite = icon;
         }
 
         public async UniTask UpdateCost(int cost)

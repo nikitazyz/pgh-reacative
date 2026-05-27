@@ -24,7 +24,7 @@ namespace Reacative.Presentation.UI
         public async UniTask UpdateRecruitingItems(CatState[] catState, int cost)
         {
             foreach (var item in 
-                     _recruitingItems.Keys.Where(item => catState.All(c => c.Id != item)))
+                     _recruitingItems.Keys.Where(item => catState.All(c => c.Id != item)).ToArray())
             {
                 _freeRecruitingItems.Add(_recruitingItems[item]);
                 _recruitingItems.Remove(item);
@@ -49,7 +49,7 @@ namespace Reacative.Presentation.UI
 
             foreach (var item in _freeRecruitingItems)
             {
-                Destroy(item);
+                Destroy(item.gameObject);
             }
             _freeRecruitingItems.Clear();
         }

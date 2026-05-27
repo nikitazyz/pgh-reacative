@@ -59505,7 +59505,6 @@ MonoBehaviour:
   _image: {fileID: 1114656185}
   _normal: {fileID: 21300000, guid: cd0c2658aeda8ad4594e6e4248f8da18, type: 3}
   _hover: {fileID: 21300000, guid: 1273037f01cc0c443bd4f8a06fe54746, type: 3}
-  _interactor: {fileID: 0}
 --- !u!114 &1114656185
 MonoBehaviour:
   m_ObjectHideFlags: 0

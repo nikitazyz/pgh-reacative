@@ -8,10 +8,8 @@ namespace Reacative.Domain.State
         double Temperature,
         bool IsActive,
         ImmutableList<string> ActiveCats
-    ) : ICatsContainerState, IBuildingState
+    ) : ICatsContainerState
     {
-        IReadOnlyCollection<string> ICatsContainerState.ActiveCats => ActiveCats;
-
         public override string ToString()
         {
             return $"Level: {Level}\nTemp: {Temperature}\nIs Active: {IsActive}";

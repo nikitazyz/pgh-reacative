@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -6,7 +7,9 @@ using Reacative.Domain;
 using Reacative.Domain.Cats;
 using Reacative.Domain.CommandSystem;
 using Reacative.Domain.Configs;
+using Reacative.Domain.Definitions.CatContainers;
 using Reacative.Domain.State;
+using Reacative.Infrastructure.Buildings;
 using Reacative.Infrastructure.Services;
 using UnityEngine;
 
@@ -16,6 +19,7 @@ namespace Reacative.Infrastructure.Cats
     {
         private readonly CatsGenerator _catsGenerator;
         private readonly GameSession _gameSession;
+        private Dictionary<string, ICatsContainerDefinition> _definitions = new();
 
         private int HeadHunterSize { get; }
 
@@ -30,6 +34,11 @@ namespace Reacative.Infrastructure.Cats
             _gameSession = session;
 
             HeadHunterSize = configProvider.HeadHunterSize;
+        }
+
+        public void AddDefinition(string id, ICatsContainerDefinition definition)
+        {
+            _definitions.Add(id, definition);
         }
 
         public async UniTask RefillHeadHunter()
@@ -58,6 +67,29 @@ namespace Reacative.Infrastructure.Cats
             }
             
             Game.ExecuteCommand(hireCommand);
+        }
+
+        public void SetCatOnBuilding(CatState cat, BuildingsSet.BuildingType building)
+        {
+            string id = BuildingsSet.IdFromType(building);
+            var definition = _definitions[id];
+
+            var command = new SetCatOnBuildingCommand(definition, cat.Id);
+            Game.ExecuteCommand(command);
+        }
+
+        public void RemoveCatFromBuilding(CatState cat, BuildingsSet.BuildingType building)
+        {
+            string id = BuildingsSet.IdFromType(building);
+            var definition = _definitions[id];
+
+            var command = new RemoveCatFromBuildingCommand(definition, cat.Id);
+            Game.ExecuteCommand(command);
+        }
+
+        public IEnumerable<KeyValuePair<string, ICatsContainerDefinition>> GetAllDefinitions()
+        {
+            return _definitions;
         }
     }
 }

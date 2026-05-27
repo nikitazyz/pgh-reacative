@@ -1,12 +1,17 @@
 using Reacative.Infrastructure.UI.ResourceDisplay;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 namespace Reacative.Presentation.UI
 {
-    public abstract class ResourceDisplay : MonoBehaviour, IResourceDisplayView
+    public class ResourceDisplay : MonoBehaviour, IResourceDisplayView
     {
-        public abstract void UpdateResources(double energy, double temperature);
+        [SerializeField] private WalletView _energyView;
+        public void UpdateResources(double energy, double temperature)
+        {
+            _energyView.UpdateText((int)energy);
+        }
 
         public bool IsActive => gameObject.activeSelf;
 

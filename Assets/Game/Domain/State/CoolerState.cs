@@ -9,8 +9,6 @@ namespace Reacative.Domain.State
         bool IsBought
     ) : ICatsContainerState, IPurchasableBuildingState
     {
-        IReadOnlyCollection<string> ICatsContainerState.ActiveCats => ActiveCats;
-
         public override string ToString()
         {
             return $"Level: {Level}";

@@ -1,4 +1,5 @@
 using Reacative.Domain.Definitions;
+using Reacative.Domain.Definitions.CatContainers;
 using Reacative.Domain.State;
 using Reacative.Infrastructure;
 using Reacative.Infrastructure.Buildings;
@@ -30,8 +31,9 @@ namespace Reacative.Bootstrap
             ServiceLocator.RegisterService(timeProvider);
             ServiceLocator.RegisterService(buildingShop);
             ServiceLocator.RegisterService(catsManager);
-            
+
             SetupPurchasableBuildings(buildingShop);
+            SetupCatsContainers(catsManager);
         }
 
         public static void GameInit()
@@ -39,7 +41,7 @@ namespace Reacative.Bootstrap
             GameSession gameSession = ServiceLocator.GetService<GameSession>();
             TimeProvider timeProvider = ServiceLocator.GetService<TimeProvider>();
             UIConfig uiConfig = ServiceLocator.GetService<UIConfig>();
-            
+
             gameSession.StartNewSession(GameStateFactory.InitialGameState(timeProvider.GetTime()));
             GameObject gameObject = new GameObject
             {
@@ -48,11 +50,15 @@ namespace Reacative.Bootstrap
             //GameObject.DontDestroyOnLoad(gameObject);
             var gameLoop = gameObject.AddComponent<GameLoop>();
             gameLoop.Init(gameSession.CurrentGame, uiConfig.UpdateInterval);
-            
+
             var cameraService = Object.Instantiate(uiConfig.CameraService);
             UISetup.Init(gameSession.CurrentGame, cameraService.UICamera, uiConfig);
-
             Debug.Log("Game initialized");
+        }
+
+        private static void SetupCatsContainers(CatsManager catsManager)
+        {
+            catsManager.AddDefinition(ReactorState.ID, new ReactorContainerDefinition());
         }
 
         private static void SetupPurchasableBuildings(BuildingShop shop)

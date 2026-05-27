@@ -24,5 +24,27 @@ namespace Reacative.Infrastructure.Buildings
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }
+
+        public static BuildingType TypeFromId(string definitionKey)
+        {
+            if (definitionKey == ReactorState.ID)
+            {
+                return BuildingType.Reactor;
+            }
+            if (definitionKey == CoolerState.ID)
+            {
+                return BuildingType.Cooler;
+            }
+            if (definitionKey == TurbineState.ID)
+            {
+                return BuildingType.Turbine;
+            }
+            if (definitionKey == LabState.ID)
+            {
+                return BuildingType.Lab;
+            }
+
+            throw new ArgumentOutOfRangeException(nameof(definitionKey), definitionKey, null);
+        }
     }
 }

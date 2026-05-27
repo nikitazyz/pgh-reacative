@@ -5,6 +5,7 @@ namespace Reacative.Domain.Cats
         Orange,
         White,
         Dark,
+        Coffee,
         Gray
     }
 }
