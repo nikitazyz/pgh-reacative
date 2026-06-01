@@ -17,6 +17,10 @@ namespace Reacative.Infrastructure.Cats
 {
     public class CatsManager : IService
     {
+        public event Action OnCatHired;
+        public event Action<CatState, BuildingsSet.BuildingType> OnCatAdded;
+        public event Action<CatState, BuildingsSet.BuildingType> OnCatRemoved;
+        
         private readonly CatsGenerator _catsGenerator;
         private readonly GameSession _gameSession;
         private Dictionary<string, ICatsContainerDefinition> _definitions = new();
@@ -67,6 +71,7 @@ namespace Reacative.Infrastructure.Cats
             }
             
             Game.ExecuteCommand(hireCommand);
+            OnCatHired?.Invoke();
         }
 
         public void SetCatOnBuilding(CatState cat, BuildingsSet.BuildingType building)
@@ -75,7 +80,12 @@ namespace Reacative.Infrastructure.Cats
             var definition = _definitions[id];
 
             var command = new SetCatOnBuildingCommand(definition, cat.Id);
+            if (!command.IsValid(Game))
+            {
+                return;
+            }
             Game.ExecuteCommand(command);
+            OnCatAdded?.Invoke(cat, building);
         }
 
         public void RemoveCatFromBuilding(CatState cat, BuildingsSet.BuildingType building)
@@ -84,12 +94,23 @@ namespace Reacative.Infrastructure.Cats
             var definition = _definitions[id];
 
             var command = new RemoveCatFromBuildingCommand(definition, cat.Id);
+            if (!command.IsValid(Game))
+            {
+                return;
+            }
             Game.ExecuteCommand(command);
+            OnCatRemoved?.Invoke(cat, building);
         }
 
         public IEnumerable<KeyValuePair<string, ICatsContainerDefinition>> GetAllDefinitions()
         {
             return _definitions;
+        }
+
+        public IEnumerable<string> GetActiveCats(BuildingsSet.BuildingType buildingType)
+        {
+            string id = BuildingsSet.IdFromType(buildingType);
+            return _definitions[id].GetActiveCats(GameState);
         }
     }
 }

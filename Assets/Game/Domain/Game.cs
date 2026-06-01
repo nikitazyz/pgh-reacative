@@ -1,4 +1,5 @@
 using System;
+using Reacative.Domain.Calculators;
 using Reacative.Domain.CommandSystem;
 using Reacative.Domain.Configs;
 using Reacative.Domain.Simulation;
@@ -103,6 +104,11 @@ namespace Reacative.Domain
                 return;
             }
             OnStateChanged?.Invoke(oldState, _currentState);
+        }
+
+        public double GetMaxTemperature()
+        {
+            return ReactorCalculator.CalculateMaxTemperature(Config.ReactorConfig.MaxTemperature);
         }
     }
     

@@ -16,5 +16,11 @@ MonoBehaviour:
   _mainView: {fileID: 6811652506676540262, guid: 93d4c7723ba0a284a95e84691463b74c, type: 3}
   _resourceDisplay: {fileID: 4067539950464629116, guid: 0c37d9deacc93f54d8e0be5fdd30f60e, type: 3}
   _cameraService: {fileID: 6504661932196666925, guid: 153811e6a112bcd479f954e2b9b0182b, type: 3}
+  _buildingMetaData:
+  - {fileID: 11400000, guid: 652728bedbbf61a4dbc716be81f2a840, type: 2}
+  - {fileID: 11400000, guid: 87afbe122dd050940bb69d9cccc16f0d, type: 2}
+  - {fileID: 11400000, guid: 958a49a9d5c1ce2469f592fda0b7642d, type: 2}
+  - {fileID: 11400000, guid: 93881d0882b9cab4eadad4c27c1bca3b, type: 2}
   _recruitingWindow: {fileID: 1103338856626719257, guid: f7d78a1dea23ac04db4946f829c01971, type: 3}
   _catsManagementWindow: {fileID: 7060569070169189496, guid: 4a4b4e2b0c327c743943e04088c6850b, type: 3}
+  _buildingInfoWindow: {fileID: 7654351443397100745, guid: 22b03067acd742246af50047f168a689, type: 3}

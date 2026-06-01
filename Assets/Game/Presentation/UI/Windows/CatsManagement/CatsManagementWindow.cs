@@ -25,7 +25,7 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
         {
             base.Awake();
 
-            _catsSelectionPanel.OnSelect += AddCat;
+            _catsSelectionPanel.OnSelect += (type, cat) => AddCat?.Invoke(type, cat);
             foreach (var panel in _panels)
             {
                 if (!_catsPanels.TryAdd(BuildingsSet.IdFromType(panel.BuildingType), panel))
@@ -37,6 +37,12 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
                 panel.RemoveCat += cat => RemoveCat?.Invoke(panel.BuildingType, cat);
                 panel.AddCat += () => _catsSelectionPanel.OpenPanel(panel.BuildingType, _availableCats);
             }
+        }
+
+        protected override void OnClosed()
+        {
+            base.OnClosed();
+            _catsSelectionPanel.ClosePanel();
         }
 
         public void UpdateAvailableCats(List<CatState> catStates)

@@ -39,12 +39,13 @@ namespace Reacative.Domain.Simulation
         {
             double overheatTemp = _config.MaxTemperature * _config.OverheatThreshold;
             bool isOverheated = gameState.ReactorState.Temperature >= overheatTemp;
+            double maxTemperature = ReactorCalculator.CalculateMaxTemperature(_config.MaxTemperature);
             
             var newTemperature = ReactorCalculator.CalculateTemperatureIncrease(gameState.ReactorState.Temperature, 
                 _config.BaseTemperatureIncrease, 
                 context.DeltaTime, 
                 _config.LevelTemperatureMultiplier, 
-                gameState.ReactorState.Level, _config.MaxTemperature);
+                gameState.ReactorState.Level, maxTemperature);
             
             bool willOverheat = newTemperature >= overheatTemp;
 

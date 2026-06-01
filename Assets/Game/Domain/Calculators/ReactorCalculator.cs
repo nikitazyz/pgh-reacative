@@ -23,5 +23,10 @@ namespace Reacative.Domain.Calculators
         {
             return Math.Max(0, temperature - (baseTemperatureIncrease * deltaTime + levelTemperatureMultiplier * level));
         }
+
+        public static double CalculateMaxTemperature(double baseMaxTemp)
+        {
+            return baseMaxTemp;
+        }
     }
 }

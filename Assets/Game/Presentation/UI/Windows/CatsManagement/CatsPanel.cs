@@ -48,6 +48,8 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
                 _buttons[i].gameObject.SetActive(true);
                 _buttons[i].CatState = catState;
             }
+
+            _addButton.gameObject.SetActive(catStates.Count < _buttons.Length);
         }
     }
 }

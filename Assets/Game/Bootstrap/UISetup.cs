@@ -1,4 +1,6 @@
 using Reacative.Domain;
+using Reacative.Infrastructure.Configs.BuildingsMeta;
+using Reacative.Infrastructure.UI.BuildingInfo;
 using Reacative.Infrastructure.UI.CatsManagement;
 using Reacative.Infrastructure.UI.Recruiting;
 using Reacative.Infrastructure.UI.ResourceDisplay;
@@ -31,6 +33,11 @@ namespace Reacative.Bootstrap
             mainWindow.AddTypeWindow(catManagementWindow);
             catManagementController.Assign(catManagementWindow);
             mainWindow.AddTaskbarButton(() => catManagementController.SetActive(!catManagementController.IsActive));
+
+            var buildingInfoController = new BuildingInfoController(config.BuildingMetaData);
+            var buildingInfoView = Object.Instantiate(config.BuildingInfoView);
+            mainWindow.AddTypeWindow(buildingInfoView);
+            buildingInfoController.Assign(buildingInfoView);
         }
     }
 }

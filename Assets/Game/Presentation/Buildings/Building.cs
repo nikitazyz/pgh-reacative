@@ -41,7 +41,7 @@ namespace Reacative.Presentation.Buildings
 
         private void OnPurchase()
         {
-            _shop.BuyBuilding(_type);
+            _shop.RequestBuilding(_type);
         }
     }
 }

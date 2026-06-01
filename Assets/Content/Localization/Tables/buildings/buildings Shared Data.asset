@@ -16,19 +16,35 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 594cee3a2a558ce44bdc5a4559814149
   m_Entries:
   - m_Id: 20395843584
-    m_Key: reactor
+    m_Key: reactor_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8566869647679488
+    m_Key: reactor_description
     m_Metadata:
       m_Items: []
   - m_Id: 139405025280
-    m_Key: cooler
+    m_Key: cooler_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567041215684608
+    m_Key: cooler_description
     m_Metadata:
       m_Items: []
   - m_Id: 187589189632
-    m_Key: turbine
+    m_Key: turbine_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567098618929152
+    m_Key: turbine_description
     m_Metadata:
       m_Items: []
   - m_Id: 246192005120
-    m_Key: lab
+    m_Key: lab_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567239518183424
+    m_Key: lab_description
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -1,10 +1,13 @@
 using Reacative.Infrastructure.CameraSetup;
+using Reacative.Infrastructure.Configs.BuildingsMeta;
 using Reacative.Infrastructure.Services;
 using Reacative.Infrastructure.UI.Recruiting;
 using Reacative.Presentation.UI;
+using Reacative.Presentation.UI.Building;
 using Reacative.Presentation.UI.Windows.CatsManagement;
 using Reacative.Presentation.UI.WindowsSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Reacative.Presentation.Configs
 {
@@ -16,17 +19,23 @@ namespace Reacative.Presentation.Configs
         [SerializeField] private ResourceDisplay _resourceDisplay;
         [SerializeField] private CameraService _cameraService;
 
+        [SerializeField] private BuildingMetaData[] _buildingMetaData;
+
         [Header("Windows")]
         [SerializeField] private RecruitingWindow _recruitingWindow;
         [SerializeField] private CatsManagementWindow _catsManagementWindow;
+        [SerializeField] private BuildingInfoView _buildingInfoWindow;
 
         public MainView MainView => _mainView;
         public ResourceDisplay ResourceDisplay => _resourceDisplay;
         public CameraService CameraService => _cameraService;
         public float UpdateInterval => _updateInterval;
         
+        public BuildingMetaData[] BuildingMetaData => _buildingMetaData;
+        
         // Windows
         public RecruitingWindow RecruitingWindow => _recruitingWindow;
         public CatsManagementWindow CatsManagementWindow => _catsManagementWindow;
+        public BuildingInfoView BuildingInfoView => _buildingInfoWindow;
     }
 }

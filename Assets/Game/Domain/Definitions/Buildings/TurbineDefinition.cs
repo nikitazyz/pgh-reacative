@@ -4,6 +4,7 @@ namespace Reacative.Domain.Definitions
 {
     public class TurbineDefinition : PurchasableBuildingDefinition
     {
+        public override string BuildingId => TurbineState.ID;
         public override int Cost { get; }
 
         public TurbineDefinition(int cost)

@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using Reacative.Domain.State;
 using Reacative.Infrastructure.Buildings;
+using Reacative.Infrastructure.CameraSetup;
+using Reacative.Infrastructure.Services;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Reacative.Presentation.UI.Windows.CatsManagement
 {
@@ -10,15 +13,22 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
     {
         public event Action<BuildingsSet.BuildingType, CatState> OnSelect;
         [SerializeField] private CatsPanelButton _template;
-        [SerializeField] private Transform _container;
+        [SerializeField] private RectTransform _container;
 
         private readonly List<CatsPanelButton> _catsButtons = new();
         private BuildingsSet.BuildingType _selectedBuildingType;
 
+        private ICameraService _cameraService;
+
         private void Awake()
         {
-            OnSelect += (_,_) => gameObject.SetActive(false);
+            OnSelect += (_,_) => ClosePanel();
             _template.gameObject.SetActive(false);
+        }
+
+        private void Start()
+        {
+            _cameraService = ServiceLocator.GetService<ICameraService>();
         }
 
         public void OpenPanel(BuildingsSet.BuildingType type, List<CatState> states)
@@ -48,6 +58,25 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
             }
             
             gameObject.SetActive(true);
+        }
+
+        public void ClosePanel()
+        {
+            gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            var mouse = Mouse.current;
+            var wasPressed = mouse.leftButton.wasPressedThisFrame;
+            var position = mouse.position.ReadValue();
+            var isInRect = RectTransformUtility.RectangleContainsScreenPoint(_container, position, _cameraService.UICamera);
+            
+            Debug.Log(isInRect);
+            if (wasPressed && !isInRect)
+            {
+                ClosePanel();
+            }
         }
     }
 }

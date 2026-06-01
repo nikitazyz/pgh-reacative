@@ -75,6 +75,59 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1714433874245979111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6142106711108001620}
+  - component: {fileID: 3498376629457425863}
+  m_Layer: 5
+  m_Name: TemperatureBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6142106711108001620
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714433874245979111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3806452539926262494}
+  m_Father: {fileID: 5937195788784305963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 842.5601, y: -345.6}
+  m_SizeDelta: {x: 20.738403, y: 72.58453}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3498376629457425863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714433874245979111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9478b755ecc6444a2eb5385e6c4726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Presentation::Reacative.Presentation.ClockBar
+  _arrow: {fileID: 3806452539926262494}
+  _lowAngle: 138
+  _highAngle: -140
+  _value: 0
 --- !u!1 &1906647709373194634
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +629,7 @@ RectTransform:
   - {fileID: 3387732085136132988}
   - {fileID: 8856602864655538014}
   - {fileID: 5898326006784296208}
-  - {fileID: 3806452539926262494}
+  - {fileID: 6142106711108001620}
   - {fileID: 4146488014524098770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -661,6 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Presentation::Reacative.Presentation.UI.ResourceDisplay
   _energyView: {fileID: 8945987845637099039}
+  _temperatureView: {fileID: 3498376629457425863}
 --- !u!1 &3341706345991375480
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,16 +877,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4590252129903718276}
-  m_LocalRotation: {x: 0.0000006868223, y: 0.00000029882676, z: 0.9253719, w: 0.3790606}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9396926, w: 0.34202018}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5937195788784305963}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 495.449}
+  m_Father: {fileID: 6142106711108001620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -140}
   m_AnchorMin: {x: 0.85300004, y: 0.05}
   m_AnchorMax: {x: 0.85300004, y: 0.05}
-  m_AnchoredPosition: {x: 164.8, y: 140.4}
+  m_AnchoredPosition: {x: -7.320719, y: 32.66301}
   m_SizeDelta: {x: 20.738403, y: 72.5845}
   m_Pivot: {x: 0.5, y: 0.06014839}
 --- !u!222 &5327021703973596338

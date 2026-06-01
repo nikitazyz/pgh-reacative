@@ -4,8 +4,9 @@ namespace Reacative.Domain.Definitions
 {
     public class LabDefinition : PurchasableBuildingDefinition
     {
+        public override string BuildingId => LabState.ID;
         public override int Cost { get; }
-        
+
         public override GameState GetBoughtState(GameState gameState)
         {
             return gameState with

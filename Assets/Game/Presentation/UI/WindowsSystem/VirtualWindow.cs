@@ -181,12 +181,12 @@ namespace Reacative.Presentation.UI.WindowsSystem
 
         }
 
-        private void OnOpened()
+        protected virtual void OnOpened()
         {
             WindowState = WindowState.Opened;
         }
 
-        private void OnClosed()
+        protected virtual void OnClosed()
         {
             gameObject.SetActive(false);
             WindowState = WindowState.Closed;

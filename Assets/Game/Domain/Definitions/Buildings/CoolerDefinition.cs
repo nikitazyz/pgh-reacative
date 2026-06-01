@@ -4,6 +4,7 @@ namespace Reacative.Domain.Definitions
 {
     public class CoolerDefinition : PurchasableBuildingDefinition
     {
+        public override string BuildingId => CoolerState.ID;
         public override int Cost { get; }
 
         public CoolerDefinition(int cost)

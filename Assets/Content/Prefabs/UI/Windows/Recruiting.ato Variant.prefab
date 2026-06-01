@@ -502,7 +502,7 @@ MonoBehaviour:
   _closeButton: {fileID: 5078244204332363517}
   _dragTab: {fileID: 181173978258205026}
   _title: {fileID: 225917564431419863}
-  _startPosition: {x: -700, y: -100}
+  _startPosition: {x: -500, y: -100}
   _openAnimation: 2
   _closeAnimation: 1
   _recruitingTemplate: {fileID: 7244039808373342956, guid: 032fa034159e32449ac55393e4a0a4e5, type: 3}

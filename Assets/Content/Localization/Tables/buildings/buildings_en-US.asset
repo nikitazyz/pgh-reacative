@@ -34,6 +34,22 @@ MonoBehaviour:
     m_Localized: Lab
     m_Metadata:
       m_Items: []
+  - m_Id: 8566869647679488
+    m_Localized: Reactor Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567041215684608
+    m_Localized: Cooler Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567098618929152
+    m_Localized: Turbine Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567239518183424
+    m_Localized: Lab Description
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

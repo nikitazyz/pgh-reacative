@@ -10,6 +10,7 @@ namespace Reacative.Infrastructure.Buildings
     public class BuildingShop : IService
     {
         public event Action<IPurchasableBuildingDefinition> OnBuildingBought;
+        public event Action<BuildingsSet.BuildingType> OnBuildingRequest; 
         
         private readonly Dictionary<string, IPurchasableBuildingDefinition> _definitions = new();
         private readonly GameSession _gameSession;
@@ -22,6 +23,11 @@ namespace Reacative.Infrastructure.Buildings
         public void RegisterDefinition(string id, IPurchasableBuildingDefinition definition)
         {
             _definitions.Add(id, definition);
+        }
+
+        public void RequestBuilding(BuildingsSet.BuildingType type)
+        {
+            OnBuildingRequest?.Invoke(type);
         }
 
         public void BuyBuilding(BuildingsSet.BuildingType type)
@@ -55,6 +61,24 @@ namespace Reacative.Infrastructure.Buildings
         public bool IsBought(string id)
         {
             return _definitions[id].IsPurchased(_gameSession.CurrentGame.CurrentState);
+        }
+
+        public int GetCost(BuildingsSet.BuildingType type)
+        {
+            string id = BuildingsSet.IdFromType(type);
+            return _definitions[id].Cost;
+        }
+
+        public bool CanBuy(BuildingsSet.BuildingType type)
+        {
+            string id = BuildingsSet.IdFromType(type);
+            if (!_definitions.TryGetValue(id, out var definition))
+            {
+                return false;
+            }
+            
+            var buyBuilding = new BuyBuildingCommand(definition);
+            return buyBuilding.IsValid(_gameSession.CurrentGame);
         }
     }
 }
