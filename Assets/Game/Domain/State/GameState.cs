@@ -13,6 +13,7 @@ namespace Reacative.Domain.State
         CoolerState CoolerState,
         LabState LabState,
         GeneratorState GeneratorState,
+        SpecialistState SpecialistState,
         ImmutableList<CatState> GeneratedCats,
         ImmutableList<string> HiredCats,
         EventTimeline EventTimeline

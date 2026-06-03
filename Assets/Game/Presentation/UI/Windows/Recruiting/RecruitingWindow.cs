@@ -16,10 +16,17 @@ namespace Reacative.Presentation.UI
         [Header("Recruiting Properties")]
         [SerializeField] private RecruitingItem _recruitingTemplate;
         [SerializeField] private Transform _recruitingContainer;
+        [SerializeField] private GameObject _lockPanel;
 
         private readonly Dictionary<string, RecruitingItem> _recruitingItems = new();
         private readonly List<RecruitingItem> _freeRecruitingItems = new();
 
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _lockPanel.SetActive(true);
+        }
 
         public async UniTask UpdateRecruitingItems(CatState[] catState, int cost)
         {
@@ -59,6 +66,11 @@ namespace Reacative.Presentation.UI
             var instance = Instantiate(_recruitingTemplate, _recruitingContainer);
             instance.OnHire += c => OnHire?.Invoke(c);
             return instance;
+        }
+
+        public void Unlock()
+        {
+            _lockPanel.SetActive(false);
         }
 
         public bool IsActive => WindowState is WindowState.Opened or WindowState.Opening;

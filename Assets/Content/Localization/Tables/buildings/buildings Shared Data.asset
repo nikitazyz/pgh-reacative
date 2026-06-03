@@ -47,6 +47,18 @@ MonoBehaviour:
     m_Key: lab_description
     m_Metadata:
       m_Items: []
+  - m_Id: 9707497945292800
+    m_Key: specialist_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9707580325617664
+    m_Key: specialist_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9763685676343296
+    m_Key: generator_name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

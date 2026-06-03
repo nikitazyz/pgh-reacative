@@ -4,5 +4,6 @@ namespace Reacative.Domain.Configs
     {
         public double TurbineTime { get; }
         public double ReloadTime { get; }
+        public int Cost { get; }
     }
 }

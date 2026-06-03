@@ -9,6 +9,7 @@ namespace Reacative.Domain.Simulation
         public double GeneratorPower { get; set; }
         
         public bool ShouldStopTurbine { get; set; }
+        public bool ReactorNewActiveState { get; set; }
 
         public SimulationContext(double deltaTime, long timeStamp)
         {

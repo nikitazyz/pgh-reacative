@@ -110,6 +110,12 @@ namespace Reacative.Domain
         {
             return ReactorCalculator.CalculateMaxTemperature(Config.ReactorConfig.MaxTemperature);
         }
+
+        public bool IsOverheated()
+        {
+            return CurrentState.ReactorState.Temperature >=
+                   GetMaxTemperature() * Config.ReactorConfig.OverheatThreshold;
+        }
     }
     
     public delegate void ChangeStateHandler(GameState oldState, GameState newState);

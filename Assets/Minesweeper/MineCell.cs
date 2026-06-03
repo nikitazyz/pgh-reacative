@@ -12,11 +12,10 @@ namespace Minesweeper
         public event Action<MinesweeperGame.Cell> OnSecondaryClick;
         
         [SerializeField] private Image _background;
-        [SerializeField] private Image _icon;
-        [SerializeField] private TextMeshProUGUI _minesCount;
 
         [SerializeField] private Sprite _closedCell;
         [SerializeField] private Sprite _openedCell;
+        [SerializeField] private Sprite[] _numbers;
         
         [SerializeField] private Sprite _mine;
         [SerializeField] private Sprite _flag;
@@ -32,17 +31,27 @@ namespace Minesweeper
         public void UpdateCell()
         {
             _background.sprite = _cell.IsOpened ? _openedCell : _closedCell;
-            _icon.sprite = _cell.IsFlagged ? _flag : null;
-            _icon.color = _cell.IsFlagged ? Color.white : new Color(0,0,0,0);
-            _minesCount.text = _cell.IsOpened && _cell.MinesCount > 0 ? _cell.MinesCount.ToString() : "";
+
+            _background.sprite = _closedCell;
+            if (_cell.IsFlagged)
+            {
+                _background.sprite = _flag;
+            }
+
+            if (_cell.IsOpened)
+            {
+                _background.sprite = _openedCell;
+                if (_cell.MinesCount > 0)
+                {
+                    _background.sprite = _numbers[_cell.MinesCount-1];
+                }
+            }
         }
 
         public void ShowMine()
         {
             if (!_cell.IsMine)  return;
-            _background.sprite = _openedCell;
-            _icon.sprite = _mine;
-            _icon.color = Color.white;
+            _background.sprite = _mine;
         }
         
         public void OnPointerUp(PointerEventData eventData)

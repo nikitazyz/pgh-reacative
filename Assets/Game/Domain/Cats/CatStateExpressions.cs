@@ -19,5 +19,10 @@ namespace Reacative.Domain.Cats
         {
             return gameState.GeneratedCats.Where(c => !IsCatHired(gameState, c)).ToArray();
         }
+
+        public static CatState GetCatById(this GameState gameState, string id)
+        {
+            return gameState.GeneratedCats.FirstOrDefault(c => c.Id == id);
+        }
     }
 }

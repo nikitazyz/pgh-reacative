@@ -715,6 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Presentation::Reacative.Presentation.UI.ResourceDisplay
   _energyView: {fileID: 8945987845637099039}
   _temperatureView: {fileID: 3498376629457425863}
+  _batteryView: {fileID: 4282589893024459210}
 --- !u!1 &3341706345991375480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1265,7 @@ GameObject:
   - component: {fileID: 8856602864655538014}
   - component: {fileID: 7487220683573959940}
   - component: {fileID: 5979885821339501982}
+  - component: {fileID: 4282589893024459210}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1328,6 +1330,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4282589893024459210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639843663787657117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c5c4459d24066ad7d47f6bec36f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Presentation::Reacative.Presentation.UI.BatteryView
+  _icon: {fileID: 5979885821339501982}
+  _batteryIcons:
+  - {fileID: -1077225749, guid: 0500364cd0178d54f8e6b904110b766a, type: 3}
+  - {fileID: -1818186424, guid: 0500364cd0178d54f8e6b904110b766a, type: 3}
+  - {fileID: 584139842, guid: 0500364cd0178d54f8e6b904110b766a, type: 3}
+  - {fileID: 833601368, guid: 0500364cd0178d54f8e6b904110b766a, type: 3}
+  - {fileID: -1782808602, guid: 0500364cd0178d54f8e6b904110b766a, type: 3}
+  - {fileID: 1415238734, guid: 0500364cd0178d54f8e6b904110b766a, type: 3}
 --- !u!1 &6644414098976690671
 GameObject:
   m_ObjectHideFlags: 0

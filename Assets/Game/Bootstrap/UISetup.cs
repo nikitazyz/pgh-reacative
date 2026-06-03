@@ -25,19 +25,23 @@ namespace Reacative.Bootstrap
             var recruitingWindow = Object.Instantiate(config.RecruitingWindow);
             mainWindow.AddTypeWindow(recruitingWindow);
             recruitingController.Assign(recruitingWindow);
-            mainWindow.AddTaskbarButton(() => recruitingController.SetActive(!recruitingController.IsActive));
+            mainWindow.AddTaskbarButton(recruitingWindow.WindowIcon, () => recruitingController.SetActive(!recruitingController.IsActive));
 
 
             var catManagementController = new CatsManagementController(game);
             var catManagementWindow = Object.Instantiate(config.CatsManagementWindow);
             mainWindow.AddTypeWindow(catManagementWindow);
             catManagementController.Assign(catManagementWindow);
-            mainWindow.AddTaskbarButton(() => catManagementController.SetActive(!catManagementController.IsActive));
+            mainWindow.AddTaskbarButton(catManagementWindow.WindowIcon, () => catManagementController.SetActive(!catManagementController.IsActive));
 
             var buildingInfoController = new BuildingInfoController(config.BuildingMetaData);
             var buildingInfoView = Object.Instantiate(config.BuildingInfoView);
             mainWindow.AddTypeWindow(buildingInfoView);
             buildingInfoController.Assign(buildingInfoView);
+            
+            var mineSweeper = Object.Instantiate(config.MineSweeper);
+            mainWindow.AddTypeWindow(mineSweeper);
+            mainWindow.AddTaskbarButton(mineSweeper.WindowIcon, () => mineSweeper.Toggle());
         }
     }
 }

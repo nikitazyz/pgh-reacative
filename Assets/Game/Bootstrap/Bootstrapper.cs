@@ -32,7 +32,7 @@ namespace Reacative.Bootstrap
             ServiceLocator.RegisterService(buildingShop);
             ServiceLocator.RegisterService(catsManager);
 
-            SetupPurchasableBuildings(buildingShop);
+            SetupPurchasableBuildings(buildingShop, config);
             SetupCatsContainers(catsManager);
         }
 
@@ -61,11 +61,11 @@ namespace Reacative.Bootstrap
             catsManager.AddDefinition(ReactorState.ID, new ReactorContainerDefinition());
         }
 
-        private static void SetupPurchasableBuildings(BuildingShop shop)
+        private static void SetupPurchasableBuildings(BuildingShop shop, GameConfig gameConfig)
         {
-            shop.RegisterDefinition(LabState.ID, new LabDefinition(100));
-            shop.RegisterDefinition(CoolerState.ID, new CoolerDefinition(100));
-            shop.RegisterDefinition(TurbineState.ID, new TurbineDefinition(100));
+            shop.RegisterDefinition(CoolerState.ID, new CoolerDefinition(gameConfig.CoolerConfig.Cost));
+            shop.RegisterDefinition(TurbineState.ID, new TurbineDefinition(gameConfig.TurbineConfig.Cost));
+            shop.RegisterDefinition(SpecialistState.ID, new SpecialistDefinition(gameConfig.SpecialistConfig.Cost));
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]

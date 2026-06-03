@@ -50,6 +50,14 @@ MonoBehaviour:
     m_Localized: Lab Description
     m_Metadata:
       m_Items: []
+  - m_Id: 9707497945292800
+    m_Localized: Specialist Headquarters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9763685676343296
+    m_Localized: Generator
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

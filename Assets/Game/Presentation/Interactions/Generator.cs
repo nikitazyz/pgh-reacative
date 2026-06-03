@@ -3,6 +3,7 @@ using Reacative.Domain.State;
 using Reacative.Infrastructure;
 using Reacative.Infrastructure.InteractionSystem;
 using Reacative.Infrastructure.Services;
+using Reacative.Presentation.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace Reacative.Presentation.Interactions
     public class Generator : MonoBehaviour
     {
         [SerializeField] private InteractionReceiver _interactionReceiver;
-        [SerializeField] private Image _progress;
+        [SerializeField] private BatteryView _batteryView;
         private GameSession _gameSession;
 
         public void Awake()
@@ -34,7 +35,7 @@ namespace Reacative.Presentation.Interactions
 
         private void OnStateChanged(GameState oldState, GameState newState)
         {
-            _progress.fillAmount = (float)_gameSession.CurrentGame.CurrentState.GeneratorState.Power;
+            _batteryView.UpdateBattery((float)newState.GeneratorState.Power);
         }
     }
 }

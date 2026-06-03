@@ -29,7 +29,28 @@ namespace Reacative.Infrastructure.UI.Recruiting
                 Update(View, newState);
             };
             _catsManager = ServiceLocator.GetService<CatsManager>();
+
+            _game.Subscribe(s => s.SpecialistState.IsBought, OnUnlock);
         }
+
+        private async void OnUnlock(bool value)
+        {
+            try
+            {
+                if (!value)
+                {
+                    return;
+                }
+            
+                View.Unlock();
+                await _catsManager.RefillHeadHunter();
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
+        }
+
         protected override void OnAssign(IRecruitingView view)
         {
             Update(view, _game.CurrentState);
@@ -63,6 +84,11 @@ namespace Reacative.Infrastructure.UI.Recruiting
                 base.OnSetActive(active);
                 if (active)
                 {
+                    if (!_game.CurrentState.SpecialistState.IsBought)
+                    {
+                        return;
+                    }
+                    View.Unlock();
                     await _catsManager.RefillHeadHunter();
                 }
             }

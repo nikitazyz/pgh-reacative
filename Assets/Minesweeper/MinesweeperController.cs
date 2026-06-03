@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Minesweeper
 {
@@ -12,6 +13,9 @@ namespace Minesweeper
         [SerializeField] private int _minesCount = 5;
         
         [SerializeField] private MineCell _cellPrefab;
+        [SerializeField] private GameStatus _gameStatusImage;
+        
+        
 
         private MineCell[,] _mineCells;
         
@@ -52,6 +56,7 @@ namespace Minesweeper
                     }
                 }
                 OnGameOver?.Invoke();
+                _gameStatusImage.SetStatus(false);
                 return;
             }
 
@@ -60,6 +65,7 @@ namespace Minesweeper
             {
                 _isPlaying = false;
                 OnComplete?.Invoke();
+                _gameStatusImage.SetStatus(true);
             }
         }
 
@@ -97,6 +103,7 @@ namespace Minesweeper
                 }
             }
             _isPlaying = true;
+            _gameStatusImage.SetStatus(null);
         }
         
         

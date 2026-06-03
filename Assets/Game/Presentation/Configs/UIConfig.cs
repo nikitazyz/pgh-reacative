@@ -26,6 +26,8 @@ namespace Reacative.Presentation.Configs
         [SerializeField] private CatsManagementWindow _catsManagementWindow;
         [SerializeField] private BuildingInfoView _buildingInfoWindow;
 
+        [SerializeField] private VirtualWindow _mineSweeper;
+
         public MainView MainView => _mainView;
         public ResourceDisplay ResourceDisplay => _resourceDisplay;
         public CameraService CameraService => _cameraService;
@@ -37,5 +39,7 @@ namespace Reacative.Presentation.Configs
         public RecruitingWindow RecruitingWindow => _recruitingWindow;
         public CatsManagementWindow CatsManagementWindow => _catsManagementWindow;
         public BuildingInfoView BuildingInfoView => _buildingInfoWindow;
+
+        public VirtualWindow MineSweeper => _mineSweeper;
     }
 }

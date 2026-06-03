@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Reacative.Domain.State;
 using Reacative.Infrastructure.Buildings;
 using Reacative.Infrastructure.Cats;
@@ -14,7 +15,8 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
     {
         public event Action<BuildingsSet.BuildingType, CatState> RemoveCat; 
         public event Action<BuildingsSet.BuildingType, CatState> AddCat;
-        
+
+        [SerializeField] private GameObject _lockPanel;
         [SerializeField] private CatsSelectionPanel _catsSelectionPanel;
         [SerializeField] private CatsPanel[] _panels;
 
@@ -25,7 +27,13 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
         {
             base.Awake();
 
+            _lockPanel.SetActive(true);
             _catsSelectionPanel.OnSelect += (type, cat) => AddCat?.Invoke(type, cat);
+            
+        }
+
+        public void Init()
+        {
             foreach (var panel in _panels)
             {
                 if (!_catsPanels.TryAdd(BuildingsSet.IdFromType(panel.BuildingType), panel))
@@ -45,6 +53,15 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
             _catsSelectionPanel.ClosePanel();
         }
 
+        public void UpdateAvailablePanels(string[] availableBuildings)
+        {
+            foreach (var panel in _catsPanels.Values)
+            {
+                string id = BuildingsSet.IdFromType(panel.BuildingType);
+                panel.gameObject.SetActive(availableBuildings.Contains(id));
+            }
+        }
+
         public void UpdateAvailableCats(List<CatState> catStates)
         {
             _availableCats = catStates;
@@ -54,6 +71,11 @@ namespace Reacative.Presentation.UI.Windows.CatsManagement
         {
             var panel = _catsPanels[buildingType];
             panel.UpdateButtons(catStates);
+        }
+
+        public void Unlock()
+        {
+            _lockPanel.SetActive(false);
         }
 
         public bool IsActive => WindowState is WindowState.Opened or WindowState.Opening;

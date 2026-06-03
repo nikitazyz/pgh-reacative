@@ -10,7 +10,8 @@ namespace Reacative.Infrastructure.Buildings
             Reactor,
             Cooler,
             Turbine,
-            Lab
+            Lab,
+            Specialist
         }
 
         public static string IdFromType(BuildingType type)
@@ -21,6 +22,7 @@ namespace Reacative.Infrastructure.Buildings
                 BuildingType.Cooler => CoolerState.ID,
                 BuildingType.Turbine => TurbineState.ID,
                 BuildingType.Lab => LabState.ID,
+                BuildingType.Specialist => SpecialistState.ID,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

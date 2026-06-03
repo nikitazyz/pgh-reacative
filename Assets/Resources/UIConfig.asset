@@ -21,6 +21,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 87afbe122dd050940bb69d9cccc16f0d, type: 2}
   - {fileID: 11400000, guid: 958a49a9d5c1ce2469f592fda0b7642d, type: 2}
   - {fileID: 11400000, guid: 93881d0882b9cab4eadad4c27c1bca3b, type: 2}
+  - {fileID: 11400000, guid: a1fa0814da760ed4ba77112886c320f9, type: 2}
   _recruitingWindow: {fileID: 1103338856626719257, guid: f7d78a1dea23ac04db4946f829c01971, type: 3}
   _catsManagementWindow: {fileID: 7060569070169189496, guid: 4a4b4e2b0c327c743943e04088c6850b, type: 3}
   _buildingInfoWindow: {fileID: 7654351443397100745, guid: 22b03067acd742246af50047f168a689, type: 3}
+  _mineSweeper: {fileID: 7685422136340983615, guid: 279684b61c2fe2541a2ef9363b447f90, type: 3}

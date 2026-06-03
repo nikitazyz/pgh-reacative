@@ -10,5 +10,8 @@ namespace Reacative.Infrastructure.Configs
         public double TurbineTime { get; private set; }
         [field: SerializeField]
         public double ReloadTime { get; private set; }
+
+        [field: SerializeField]
+        public int Cost { get; private set; }
     }
 }

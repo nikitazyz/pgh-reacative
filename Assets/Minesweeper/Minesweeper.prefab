@@ -77,6 +77,7 @@ MonoBehaviour:
   _fieldSize: {x: 10, y: 10}
   _minesCount: 10
   _cellPrefab: {fileID: 2430883175594776207, guid: 33b63cc76c735d74fbb5d6461329d68e, type: 3}
+  _gameStatusImage: {fileID: 6476807914970022332}
 --- !u!222 &255190705800725367
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -115,7 +116,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6520828027804171393}
   m_Father: {fileID: 3186102678269817839}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -217,6 +219,98 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2031423517725672674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6520828027804171393}
+  - component: {fileID: 5336600364028652214}
+  - component: {fileID: 135221284456536579}
+  - component: {fileID: 6476807914970022332}
+  m_Layer: 5
+  m_Name: Status
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6520828027804171393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031423517725672674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7717133487197622891}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 46, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5336600364028652214
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031423517725672674}
+  m_CullTransparentMesh: 1
+--- !u!114 &135221284456536579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031423517725672674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6476807914970022332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031423517725672674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64595414f6c04e0288426a4d216bccee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Minesweeper.GameStatus
+  _gameStatusImage: {fileID: 135221284456536579}
+  _startGame: {fileID: 21300000, guid: fe811c2871762fc4d8b0d4300a571790, type: 3}
+  _gameOver: {fileID: 21300000, guid: 9cc1e43b0d6e8e941be229dca3620e25, type: 3}
+  _winGame: {fileID: 21300000, guid: 9ce37af61aa428f4aad1e683c4d42f79, type: 3}
 --- !u!1 &4312533771067715892
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,8 +378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Minesweeper.exe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3d45683590a90d048a82b44581956400, type: 2}
-  m_sharedMaterial: {fileID: -1464358019534902076, guid: 3d45683590a90d048a82b44581956400, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -709,5 +803,7 @@ MonoBehaviour:
   _closeButton: {fileID: 5064749862860501730}
   _dragTab: {fileID: 5786657584473992308}
   _title: {fileID: 5089639969543546927}
+  _startPosition: {x: 0, y: 0}
+  _windowIcon: {fileID: -737199215, guid: 828357b04cced2b4da297eb19b27b741, type: 3}
   _openAnimation: 2
   _closeAnimation: 1

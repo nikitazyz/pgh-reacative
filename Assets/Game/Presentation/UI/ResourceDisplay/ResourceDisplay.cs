@@ -13,6 +13,7 @@ namespace Reacative.Presentation.UI
     {
         [SerializeField] private WalletView _energyView;
         [SerializeField] private ClockBar _temperatureView;
+        [SerializeField] private BatteryView _batteryView;
         private Game _game;
 
         private void Awake()
@@ -20,13 +21,14 @@ namespace Reacative.Presentation.UI
             _game = ServiceLocator.GetService<GameSession>().CurrentGame;
         }
 
-        public void UpdateResources(double energy, double temperature)
+        public void UpdateResources(double energy, double temperature, double power)
         {
             _energyView.UpdateText((int)energy);
             var maxTemp = _game.GetMaxTemperature();
             Debug.Log(maxTemp);
             Debug.Log(temperature);
             _temperatureView.Value = (float)(temperature / maxTemp);
+            _batteryView.UpdateBattery((float)power);
         }
 
         public bool IsActive => gameObject.activeSelf;

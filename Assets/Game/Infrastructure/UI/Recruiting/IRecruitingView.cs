@@ -8,5 +8,6 @@ namespace Reacative.Infrastructure.UI.Recruiting
     {
         public event Action<CatState> OnHire; 
         public UniTask UpdateRecruitingItems(CatState[] catState, int cost);
+        public void Unlock();
     }
 }

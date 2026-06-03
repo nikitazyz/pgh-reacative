@@ -76,7 +76,8 @@ namespace Reacative.Domain.Simulation
             {
                 ReactorState = gameState.ReactorState with
                 {
-                    Temperature = gameState.ReactorState.Temperature + simulationContext.TemperatureDelta
+                    Temperature = gameState.ReactorState.Temperature + simulationContext.TemperatureDelta,
+                    IsActive = simulationContext.ReactorNewActiveState
                 },
                 ResourceBankState = gameState.ResourceBankState with
                 {

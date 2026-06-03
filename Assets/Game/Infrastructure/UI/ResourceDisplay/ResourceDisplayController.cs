@@ -9,11 +9,11 @@ namespace Reacative.Infrastructure.UI.ResourceDisplay
         public ResourceDisplayController(Game game)
         {
             _game = game;
-            _game.OnStateChanged += (oldState, newState) => View?.UpdateResources(newState.ResourceBankState.Energy, newState.ReactorState.Temperature);
+            _game.OnStateChanged += (oldState, newState) => View?.UpdateResources(newState.ResourceBankState.Energy, newState.ReactorState.Temperature, newState.GeneratorState.Power);
         }
         protected override void OnAssign(IResourceDisplayView view)
         {
-            view.UpdateResources(_game.CurrentState.ResourceBankState.Energy, _game.CurrentState.ReactorState.Temperature);
+            view.UpdateResources(_game.CurrentState.ResourceBankState.Energy, _game.CurrentState.ReactorState.Temperature, _game.CurrentState.GeneratorState.Power);
             SetActive(true);
         }
     }

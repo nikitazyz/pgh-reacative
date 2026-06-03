@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Infrastructure::Reacative.Infrastructure.Configs.TurbineConfig
   <TurbineTime>k__BackingField: 5
   <ReloadTime>k__BackingField: 60
+  <Cost>k__BackingField: 250

@@ -60,7 +60,7 @@ namespace Reacative.Infrastructure.Buildings
         
         public bool IsBought(string id)
         {
-            return _definitions[id].IsPurchased(_gameSession.CurrentGame.CurrentState);
+            return _definitions.TryGetValue(id, out var definition) && definition.IsPurchased(_gameSession.CurrentGame.CurrentState);
         }
 
         public int GetCost(BuildingsSet.BuildingType type)
@@ -79,6 +79,11 @@ namespace Reacative.Infrastructure.Buildings
             
             var buyBuilding = new BuyBuildingCommand(definition);
             return buyBuilding.IsValid(_gameSession.CurrentGame);
+        }
+
+        public IEnumerable<IPurchasableBuildingDefinition> GetDefinitions()
+        {
+            return _definitions.Values;
         }
     }
 }

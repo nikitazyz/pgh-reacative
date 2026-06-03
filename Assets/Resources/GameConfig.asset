@@ -16,3 +16,5 @@ MonoBehaviour:
   _turbine: {fileID: 11400000, guid: 4edcbe3705d3f724d93361655c2c5a8a, type: 2}
   _generatorConfig: {fileID: 11400000, guid: 178cd3ceff6ec2849a324c9c83cb514d, type: 2}
   _catsConfig: {fileID: 11400000, guid: b9d431585e2d7634e99987f5a54d4350, type: 2}
+  _coolingConfig: {fileID: 11400000, guid: 61a624c055e8c4f40b5f0e05fb6b2976, type: 2}
+  _specialistConfig: {fileID: 11400000, guid: 14632c3b2ffac6e479b6e098f6e4e87c, type: 2}

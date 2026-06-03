@@ -48,6 +48,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 6141579946292150350
+  - m_Id: 9401008441516032
+    m_Localized: Buy <b>Specialist Headquarters</b> to unlock.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

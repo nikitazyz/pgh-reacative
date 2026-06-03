@@ -56,10 +56,12 @@ namespace Reacative.Presentation.UI.WindowsSystem
             Destroy(window.gameObject);
         }
 
-        public void AddTaskbarButton(Action callback)
+        public void AddTaskbarButton(Sprite icon, Action callback)
         {
             var button = Instantiate(_taskbarButtonPrefab, _taskbar);
             button.onClick.AddListener(() => callback?.Invoke());
+            var image = button.GetComponent<Image>();
+            image.sprite = icon;
         }
     }
 }

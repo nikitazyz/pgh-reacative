@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: cost
     m_Metadata:
       m_Items: []
+  - m_Id: 9401008441516032
+    m_Key: locked_cats_management
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -16,6 +16,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
         [SerializeField] private DragTab _dragTab;
         [SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private Vector2 _startPosition;
+        [SerializeField] private Sprite _windowIcon;
 
         [Header("Animation")] 
         [SerializeField] private WindowInAnimation _openAnimation;
@@ -25,6 +26,8 @@ namespace Reacative.Presentation.UI.WindowsSystem
         public Vector2 WindowSize => GetComponent<RectTransform>().rect.size;
         
         public Vector2 StartPosition => _startPosition;
+
+        public Sprite WindowIcon => _windowIcon;
 
         public string Title
         {

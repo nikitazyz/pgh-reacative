@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3af95969aff409ea009b7ae6ad51328, type: 3}
   m_Name: GeneratorConfig
   m_EditorClassIdentifier: Game.Infrastructure::Reacative.Infrastructure.Configs.GeneratorConfig
-  <PowerIncreaseSpeed>k__BackingField: 1
+  <PowerIncreaseSpeed>k__BackingField: 5
   <PowerDecreaseSpeed>k__BackingField: 1
