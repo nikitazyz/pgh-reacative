@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: buildings_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 594cee3a2a558ce44bdc5a4559814149, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20395843584
+    m_Localized: Reactor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139405025280
+    m_Localized: Cooler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187589189632
+    m_Localized: Turbine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246192005120
+    m_Localized: Lab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8566869647679488
+    m_Localized: The reactor produces the energy. If you won't watch the temperature,
+      it will overheat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567041215684608
+    m_Localized: Additionally cools the reactor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567098618929152
+    m_Localized: The turbine allows you to speed up production for some time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8567239518183424
+    m_Localized: Lab Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9707497945292800
+    m_Localized: Specialist Headquarters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9763685676343296
+    m_Localized: Generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9707580325617664
+    m_Localized: Here you can hire new employees.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -76,7 +76,8 @@ namespace Reacative.Domain.Simulation
             {
                 ReactorState = gameState.ReactorState with
                 {
-                    Temperature = gameState.ReactorState.Temperature + simulationContext.TemperatureDelta
+                    Temperature = gameState.ReactorState.Temperature + simulationContext.TemperatureDelta,
+                    IsActive = simulationContext.ReactorNewActiveState
                 },
                 ResourceBankState = gameState.ResourceBankState with
                 {
@@ -85,6 +86,10 @@ namespace Reacative.Domain.Simulation
                 TurbineState = gameState.TurbineState with
                 {
                     IsActive = !simulationContext.ShouldStopTurbine && gameState.TurbineState.IsActive
+                },
+                GeneratorState = gameState.GeneratorState with
+                {
+                    Power = simulationContext.GeneratorPower
                 },
                 LastUpdateTime = targetTime
             };

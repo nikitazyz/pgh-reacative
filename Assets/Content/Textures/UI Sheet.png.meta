@@ -659,6 +659,204 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI Sheet_button_outline
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 359
+        width: 76
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8d87cea0382f94782ba9dfc8ad7b3b
+      internalID: -1274514947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Sheet_field
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 324
+        width: 67
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69dff412659a5f748bc28d39de7c17c1
+      internalID: 459689661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Battery_Full
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 247
+        width: 168
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338ad0151f53fe045884dc5e1e43610a
+      internalID: 1415238734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Battary_80
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 171
+        width: 168
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d27d4fc3970ef4ca1ccbc23c39d881
+      internalID: -1782808602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Battary_50
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 95
+        width: 168
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a144551cd98e93a448dac6023060cee8
+      internalID: 833601368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Battary_Low
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 20
+        width: 168
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8fd68b3d352cfd4997dd4e866e46c58
+      internalID: 584139842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Arrow
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 175
+        width: 34
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19d96d73a872414bb88d5b7c23d5185
+      internalID: 832589351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 95
+        width: 168
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f1b39e1a20d0a48a5b576826e66dba
+      internalID: -1818186424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 20
+        width: 168
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d27cab8a93f72348bc083e1651a95fd
+      internalID: -1077225749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -675,6 +873,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      UI Sheet_0: -1818186424
+      UI Sheet_1: -1077225749
       UI Sheet_bl: -514603741
       UI Sheet_button: -1537485486
       UI Sheet_button_add: -1331568219
@@ -685,11 +885,13 @@ TextureImporter:
       UI Sheet_button_info: -969004368
       UI Sheet_button_no: -1418765388
       UI Sheet_button_no_dark: -30870002
+      UI Sheet_button_outline: -1274514947
       UI Sheet_button_takeoff: -1124337583
       UI Sheet_button_wear: 1815039137
       UI Sheet_button_yes: -2013350339
       UI Sheet_button_yes_dark: 2147293856
       UI Sheet_dark_bg: 1142593731
+      UI Sheet_field: 459689661
       UI Sheet_light_bg: 1317811920
       UI Sheet_pane_dark: 1438962355
       UI Sheet_panel: 674998379
@@ -700,6 +902,11 @@ TextureImporter:
       UI Sheet_slider_background: 1981995301
       UI Sheet_slider_handle: -1669842588
       UI Sheet_window: 1916205193
+      UI_Arrow: 832589351
+      UI_Battary_50: 833601368
+      UI_Battary_80: -1782808602
+      UI_Battary_Low: 584139842
+      UI_Battery_Full: 1415238734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

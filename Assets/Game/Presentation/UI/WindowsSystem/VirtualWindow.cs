@@ -15,6 +15,8 @@ namespace Reacative.Presentation.UI.WindowsSystem
         [SerializeField] private Button _closeButton;
         [SerializeField] private DragTab _dragTab;
         [SerializeField] private TextMeshProUGUI _title;
+        [SerializeField] private Vector2 _startPosition;
+        [SerializeField] private Sprite _windowIcon;
 
         [Header("Animation")] 
         [SerializeField] private WindowInAnimation _openAnimation;
@@ -22,6 +24,10 @@ namespace Reacative.Presentation.UI.WindowsSystem
 
         public WindowState WindowState { get; private set; }
         public Vector2 WindowSize => GetComponent<RectTransform>().rect.size;
+        
+        public Vector2 StartPosition => _startPosition;
+
+        public Sprite WindowIcon => _windowIcon;
 
         public string Title
         {
@@ -38,6 +44,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
             _dragTab.DragEnd += OnDragEnd;
             
             _closeButton.onClick.AddListener(Close);
+            gameObject.SetActive(WindowState != WindowState.Closed);
         }
 
         private void OnDragStart(PointerEventData data)
@@ -46,7 +53,8 @@ namespace Reacative.Presentation.UI.WindowsSystem
             {
                 return;
             }
-            _offset = (Vector2)transform.position - data.position;
+            _offset = (Vector2)transform.position - CameraToCursorPosition(data.position);
+            transform.SetAsLastSibling();
         }
 
         private void OnDragEnd(PointerEventData data)
@@ -55,7 +63,7 @@ namespace Reacative.Presentation.UI.WindowsSystem
             {
                 return;
             }
-            var newPosition = data.position + _offset;
+            var newPosition = CameraToCursorPosition(data.position) + _offset;
             transform.position = newPosition;
 
             ClampPosition();
@@ -67,8 +75,19 @@ namespace Reacative.Presentation.UI.WindowsSystem
             {
                 return;
             }
-            var newPosition = data.position + _offset;
+            var newPosition = CameraToCursorPosition(data.position) + _offset;
             transform.position = newPosition;
+        }
+
+        public Vector2 CameraToCursorPosition(Vector2 cursorPosition)
+        {
+            var camera = GetComponentInParent<Canvas>().worldCamera;
+            if (!camera)
+            {
+                return cursorPosition;
+            }
+            
+            return camera.ScreenToWorldPoint(cursorPosition);
         }
 
         private void ClampPosition()
@@ -139,6 +158,19 @@ namespace Reacative.Presentation.UI.WindowsSystem
             }
         }
 
+        public void Toggle()
+        {
+            switch (WindowState)
+            {
+                case WindowState.Closed:
+                    Open();
+                    break;
+                case WindowState.Opened:
+                    Close();
+                    break;
+            }
+        }
+
         private void OnEnable()
         {
             if (_openAnimation == WindowInAnimation.None)
@@ -152,12 +184,12 @@ namespace Reacative.Presentation.UI.WindowsSystem
 
         }
 
-        private void OnOpened()
+        protected virtual void OnOpened()
         {
             WindowState = WindowState.Opened;
         }
 
-        private void OnClosed()
+        protected virtual void OnClosed()
         {
             gameObject.SetActive(false);
             WindowState = WindowState.Closed;

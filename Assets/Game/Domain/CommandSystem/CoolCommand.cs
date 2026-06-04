@@ -10,6 +10,10 @@ namespace Reacative.Domain.CommandSystem
         public void Execute(Game game)
         {
             game.Update();
+            if (game.CurrentState.GeneratorState.Power == 0)
+            {
+                return;
+            }
             var gameState = game.CurrentState;
 
             var cool = CoolerCalculator.CalculateTemperatureDelta(

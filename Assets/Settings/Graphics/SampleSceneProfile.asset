@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.205
+    m_Value: 0.083
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -37,10 +37,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.WhiteBalance
-  active: 1
+  active: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 24.4
+    m_Value: 15
   tint:
     m_OverrideState: 1
     m_Value: 5
@@ -65,10 +65,10 @@ MonoBehaviour:
     m_Value: 0.5
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.4
   scatter:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.44
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -109,13 +109,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.31448025, g: 0.32528535, b: 0.3490566, a: 1}
+    m_Value: {r: 0.43387324, g: 0.5345319, b: 0.735849, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.6132076, g: 0.5671639, b: 0.50040054, a: 1}
+    m_Value: {r: 0.7735849, g: 0.7234114, b: 0.6458704, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 21.3
+    m_Value: 9.3
 --- !u!114 &-3592714451972896055
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChromaticAberration
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.055
+    m_Value: 0.02
 --- !u!114 &-3357603926938260329
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -175,19 +175,19 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: -0.21
+    m_Value: -0.57
   contrast:
     m_OverrideState: 1
-    m_Value: 9
+    m_Value: 38
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.923952, b: 0.8632076, a: 1}
+    m_Value: {r: 1, g: 0.89064986, b: 0.8349056, a: 1}
   hueShift:
     m_OverrideState: 1
     m_Value: 5
   saturation:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 14.3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.087
+    m_Value: 0.114
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1

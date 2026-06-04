@@ -1,27 +1,44 @@
-using Reacative.Domain;
+using System;
+using Cysharp.Threading.Tasks;
+using Reacative.Domain.Definitions;
+using Reacative.Domain.Definitions.CatContainers;
+using Reacative.Domain.State;
 using Reacative.Infrastructure;
+using Reacative.Infrastructure.Buildings;
+using Reacative.Infrastructure.Cats;
 using Reacative.Infrastructure.Configs;
 using Reacative.Infrastructure.Factories;
 using Reacative.Infrastructure.Services;
 using Reacative.Infrastructure.Time;
-using Reacative.Infrastructure.UI.ResourceDisplay;
 using Reacative.Presentation.Configs;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
+using Object = UnityEngine.Object;
 
 namespace Reacative.Bootstrap
 {
     public static class Bootstrapper
     {
-        public static void SystemsInit()
+        private static void SystemsInit()
         {
+            LanguageBoot();
             var timeProvider = new TimeProvider();
             var config = LoadConfig();
             var uiConfig = LoadUIConfig();
+            var gameSession = new GameSession(timeProvider, config);
+            var buildingShop = new BuildingShop(gameSession);
+
+            var catsManager = new CatsManager(gameSession, config.CatsConfig);
 
             ServiceLocator.RegisterService(config);
             ServiceLocator.RegisterService(uiConfig);
-            ServiceLocator.RegisterService(new GameSession(timeProvider, config));
+            ServiceLocator.RegisterService(gameSession);
             ServiceLocator.RegisterService(timeProvider);
+            ServiceLocator.RegisterService(buildingShop);
+            ServiceLocator.RegisterService(catsManager);
+
+            SetupPurchasableBuildings(buildingShop, config);
+            SetupCatsContainers(catsManager);
         }
 
         public static void GameInit()
@@ -29,7 +46,7 @@ namespace Reacative.Bootstrap
             GameSession gameSession = ServiceLocator.GetService<GameSession>();
             TimeProvider timeProvider = ServiceLocator.GetService<TimeProvider>();
             UIConfig uiConfig = ServiceLocator.GetService<UIConfig>();
-            
+
             gameSession.StartNewSession(GameStateFactory.InitialGameState(timeProvider.GetTime()));
             GameObject gameObject = new GameObject
             {
@@ -37,18 +54,25 @@ namespace Reacative.Bootstrap
             };
             //GameObject.DontDestroyOnLoad(gameObject);
             var gameLoop = gameObject.AddComponent<GameLoop>();
-            gameLoop.Init(gameSession.CurrentGame);
-            
-            SetupUI(gameSession.CurrentGame, uiConfig);
+            gameLoop.Init(gameSession.CurrentGame, uiConfig.UpdateInterval);
 
+            var cameraService = Object.Instantiate(uiConfig.CameraService);
+            UISetup.Init(gameSession.CurrentGame, cameraService.UICamera, uiConfig);
             Debug.Log("Game initialized");
         }
 
-        public static void SetupUI(Game game, UIConfig config)
+        private static void SetupCatsContainers(CatsManager catsManager)
         {
-            var resourceController = new ResourceDisplayController(game);
-            var ui = Object.Instantiate(config.ResourceDisplay);
-            resourceController.Assign(ui);
+            catsManager.AddDefinition(ReactorState.ID, new ReactorContainerDefinition());
+            catsManager.AddDefinition(CoolerState.ID, new CoolerContainerDefinition());
+            catsManager.AddDefinition(TurbineState.ID, new TurbineContainerDefinition());
+        }
+
+        private static void SetupPurchasableBuildings(BuildingShop shop, GameConfig gameConfig)
+        {
+            shop.RegisterDefinition(CoolerState.ID, new CoolerDefinition(gameConfig.CoolerConfig.Cost));
+            shop.RegisterDefinition(TurbineState.ID, new TurbineDefinition(gameConfig.TurbineConfig.Cost));
+            shop.RegisterDefinition(SpecialistState.ID, new SpecialistDefinition(gameConfig.SpecialistConfig.Cost));
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -71,6 +95,46 @@ namespace Reacative.Bootstrap
         private static UIConfig LoadUIConfig()
         {
             return Resources.Load<UIConfig>("UIConfig");
+        }
+
+        private static void LanguageBoot()
+        {
+            var args = Environment.GetCommandLineArgs();
+            string lang = null;
+            foreach (var arg in args)
+            {
+                string prefix = "-lang=";
+                if (arg.StartsWith(prefix))
+                {
+                    lang = arg.Substring(prefix.Length);
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(lang))
+            {
+                return;
+            }
+            
+            ApplyLanguage(lang).Forget();
+        }
+
+        private static async UniTask ApplyLanguage(string code)
+        {
+            await LocalizationSettings.InitializationOperation.Task;
+
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+
+            var selected = locales.Find(l => l.Identifier.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
+
+            if (selected == null)
+            {
+                Debug.LogWarning($"Couldn't find locale code {code}. Default selected");
+                return;
+            }
+            
+            LocalizationSettings.SelectedLocale = selected;
+            Debug.Log("Language loaded");
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using Reacative.Domain.Cats;
 using Reacative.Domain.EventSystem;
 using Reacative.Domain.State;
 
@@ -11,24 +10,31 @@ namespace Reacative.Infrastructure.Factories
         public static GameState InitialGameState(long currentTime, bool isReactorActiveAtStart = false)
         {
             return new GameState(currentTime, 
-            new ResourceBankState(100, 0, 0),
+            new ResourceBankState(0, 0, 0),
             new ReactorState(
                 0,
                 0,
                 isReactorActiveAtStart,
-                new List<string>().ToImmutableList()
+                ImmutableList<string>.Empty
             ),
             new TurbineState(
                 0,
                 false,
-                0
+                0,
+                false,
+                ImmutableList<string>.Empty
             ),
             new CoolerState(
                 0,
-                new List<string>().ToImmutableList()
+                ImmutableList<string>.Empty,
+                false
             ),
-            new List<CatDefinition>().ToImmutableList(),
-            new EventTimeline(new List<ITimelineEvent>().ToImmutableList()));
+            new LabState(false),
+            new GeneratorState(1, ImmutableList<string>.Empty),
+            new SpecialistState(false),
+            ImmutableList<CatState>.Empty,
+            ImmutableList<string>.Empty,
+            new EventTimeline(ImmutableList<ITimelineEvent>.Empty));
         }
     }
 }

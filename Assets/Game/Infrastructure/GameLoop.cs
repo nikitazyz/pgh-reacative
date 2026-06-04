@@ -12,6 +12,11 @@ namespace Reacative.Infrastructure
         {
             _game = game;
             _refreshInterval = refreshInterval;
+
+            _game.OnStateChanged += (oldState, newState) =>
+            {
+                if (!oldState.Equals(newState)) Debug.Log(newState);
+            };
         }
 
         void Start()
@@ -24,7 +29,6 @@ namespace Reacative.Infrastructure
             while (true)
             {
                 _game.Update();
-                Debug.Log(_game.CurrentState);
                 yield return new WaitForSeconds(_refreshInterval);
             }
         }

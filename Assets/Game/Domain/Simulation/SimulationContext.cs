@@ -6,8 +6,10 @@ namespace Reacative.Domain.Simulation
         public long TimeStamp { get; }
         public double ProducedEnergy { get; set; }
         public double TemperatureDelta { get; set; }
+        public double GeneratorPower { get; set; }
         
         public bool ShouldStopTurbine { get; set; }
+        public bool ReactorNewActiveState { get; set; }
 
         public SimulationContext(double deltaTime, long timeStamp)
         {

@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: tutorial_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 5743c65efc6ea2b44a36caee208246ec, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 125375078400
+    m_Localized: "Hi! I'm Neve \u2014 your assistent. Our goal is to establish uninterrapred
+      operation of the nuclear power plant."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2730079805440
+    m_Localized: Use WASD or arrows to move around the map.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2863341232128
+    m_Localized: If you'll have questions, follow the tab with question mark on the
+      task panel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6439400628224
+    m_Localized: Firstly, let's enable the reactor. Press once with the left mouse
+      button on the reactor. It's that big thing with colorful squares in the center
+      of the power plant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6441283870720
+    m_Localized: "While reactor is working, we're producing our main currency \u2014
+      Energy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6443108392960
+    m_Localized: Be careful, watch the reactor's temperature. If it's too high, you
+      get penalty to the Energy production. You need to disable the reactor to cool
+      it down. Press on the reactor once again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9530900471808
+    m_Localized: Got the energy? Good! Now you can build a new module. Press on the
+      cooler at the right of the reactor and build it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10829847060480
+    m_Localized: Meowesome! Now you can click on the cooler to drop the temperature
+      of reactor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11770012884992
+    m_Localized: Our lights went out! It means the Generator in the top left corner
+      run out of the power, that supports modules operation!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12702549270528
+    m_Localized: 'Important rule: Watch the generator. Click the right mouse button
+      on the generator building multiple times to power it up, until lights turned
+      on again. But you always can power up the generator on full.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13636423639040
+    m_Localized: You bought Turbine! Wait until turbine is charged up and press on
+      it. It will give you a powerful boost to the energy production on short time
+      without temperature increase.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15182125326336
+    m_Localized: Time to automate the operation! We unlocked the Specialist Headquarter! 
+      Here you can buy and place specialists on modules, so they can do your routine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15500309422080
+    m_Localized: 'On the Task Panel you have two tabs: recruiting window to search
+      new employees and employee management window to place them on modules.'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

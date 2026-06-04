@@ -14,7 +14,17 @@ namespace Reacative.Infrastructure.Services
         public static void RegisterService<T>(T service) where T : IService
         {
             _instance ??= new ServiceLocator();
+            if (_instance._services.TryGetValue(typeof(T), out var value) && value == null)
+            {
+                _instance._services[typeof(T)] = service;
+                return;
+            }
             _instance._services.Add(typeof(T), service);
+        }
+
+        public static void UnregisterService<T>(T service) where T : IService
+        {
+            _instance?._services.Remove(typeof(T));
         }
 
         public static T GetService<T>() where T : IService

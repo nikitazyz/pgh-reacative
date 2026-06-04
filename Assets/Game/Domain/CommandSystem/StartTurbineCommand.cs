@@ -5,8 +5,14 @@ namespace Reacative.Domain.CommandSystem
         
         public void Execute(Game game)
         {
+            game.Update();
             if (!IsValid(game))
                 return;
+            
+            if (game.CurrentState.GeneratorState.Power == 0)
+            {
+                return;
+            }
             
             var turbineState = game.CurrentState.TurbineState;
 

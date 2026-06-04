@@ -10,11 +10,12 @@ namespace Reacative.Domain.State
         ImmutableList<string> ActiveCats
     ) : ICatsContainerState
     {
-        IReadOnlyCollection<string> ICatsContainerState.ActiveCats => ActiveCats;
-
         public override string ToString()
         {
             return $"Level: {Level}\nTemp: {Temperature}\nIs Active: {IsActive}";
         }
+
+        public static readonly string ID = "reactor";
+        public string Id => ID;
     }
 }

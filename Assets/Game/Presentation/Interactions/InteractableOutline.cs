@@ -1,4 +1,4 @@
-using Reacative.Presentation.InteractionSystem;
+using Reacative.Infrastructure.InteractionSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +13,7 @@ namespace Reacative.Presentation.Interactions
         {
             _interactionReceiver.OnInteractEnter += InteractEnter;
             _interactionReceiver.OnInteractExit += InteractExit;
+            _outline.enabled = false;
         }
 
         public void InteractExit()

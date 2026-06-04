@@ -16,7 +16,7 @@ namespace Reacative.Domain.Simulation
  
         public void Simulate(GameState gameState, SimulationContext context)
         {
-            var deltaTime = context.DeltaTime;
+            context.ReactorNewActiveState = gameState.ReactorState.IsActive;
             if (!gameState.ReactorState.IsActive)
             {
                 InactiveSimulation(gameState, context);
@@ -33,19 +33,37 @@ namespace Reacative.Domain.Simulation
 
             var temperatureDelta = newTemperature - gameState.ReactorState.Temperature;
             context.TemperatureDelta = temperatureDelta;
+
+            if (!gameState.ReactorState.ActiveCats.IsEmpty && newTemperature <= 1)
+            {
+                context.ReactorNewActiveState = true;
+            }
         }
 
         private void ActiveStateSimulation(GameState gameState, SimulationContext context)
         {
-            double overheatTemp = _config.MaxTemperature * _config.OverheatThreshold;
+            double maxTemperature = ReactorCalculator.CalculateMaxTemperature(_config.MaxTemperature);
+            double overheatTemp = maxTemperature * _config.OverheatThreshold;
             bool isOverheated = gameState.ReactorState.Temperature >= overheatTemp;
-            
+
             var newTemperature = ReactorCalculator.CalculateTemperatureIncrease(gameState.ReactorState.Temperature, 
                 _config.BaseTemperatureIncrease, 
                 context.DeltaTime, 
                 _config.LevelTemperatureMultiplier, 
-                gameState.ReactorState.Level, _config.MaxTemperature);
+                gameState.ReactorState.Level, maxTemperature);
             
+            var activeCats = gameState.ReactorState.ActiveCats.Count;
+            var temperaturePercent = newTemperature / maxTemperature;
+            
+            switch (activeCats)
+            {
+                case 1 when temperaturePercent > 0.3:
+                case 2 when temperaturePercent > 0.6:
+                case 3 when temperaturePercent > 0.9:
+                    context.ReactorNewActiveState = false;
+                    break;
+            }
+
             bool willOverheat = newTemperature >= overheatTemp;
 
             if (willOverheat && !isOverheated)

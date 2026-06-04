@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace Reacative.Domain.State
 {
-    public interface ICatsContainerState
+    public interface ICatsContainerState : IBuildingState
     {
-        IReadOnlyCollection<string> ActiveCats { get; }
+        ImmutableList<string> ActiveCats { get; }
     }
 }
