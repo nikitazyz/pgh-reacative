@@ -2,7 +2,7 @@ name: Unity Release
 
 on: 
   push: 
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
