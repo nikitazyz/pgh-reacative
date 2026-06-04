@@ -29,6 +29,8 @@ namespace Reacative.Infrastructure.Cats
 
         private Game Game => _gameSession.CurrentGame;
         private GameState GameState => Game.CurrentState;
+        
+        private ICatsConfigProvider CatsConfigProvider { get; }
 
         public CatsManager(GameSession session, ICatsConfigProvider configProvider)
         {
@@ -36,7 +38,7 @@ namespace Reacative.Infrastructure.Cats
             var colorGenerator = new CatColorGenerator();
             _catsGenerator = new CatsGenerator(nameGenerator, colorGenerator);
             _gameSession = session;
-
+            CatsConfigProvider = configProvider;
             HeadHunterSize = configProvider.HeadHunterSize;
         }
 
@@ -65,13 +67,26 @@ namespace Reacative.Infrastructure.Cats
         public void HireCat(CatState cat)
         {
             var hireCommand = new HireCatCommand(cat);
+            var takeResource = new TakeResourceCommand(GetHireCost());
             if (!hireCommand.IsValid(Game))
             {
                 throw new ArgumentException("Cat is already hired");
             }
+
+            if (!takeResource.IsValid(Game))
+            {
+                return;
+            }
             
             Game.ExecuteCommand(hireCommand);
+            Game.ExecuteCommand(takeResource);
             OnCatHired?.Invoke();
+        }
+
+        public int GetHireCost()
+        {
+            return CatsConfigProvider.HireBaseCost + CatsConfigProvider.HireBaseCost * CatsConfigProvider.HireCostMultiplier *
+                _gameSession.CurrentGame.CurrentState.GeneratedCats.Count;
         }
 
         public void SetCatOnBuilding(CatState cat, BuildingsSet.BuildingType building)

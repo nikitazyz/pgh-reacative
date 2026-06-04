@@ -7,7 +7,7 @@ namespace Reacative.Infrastructure.UI.Recruiting
     public interface IRecruitingView : IUIView
     {
         public event Action<CatState> OnHire; 
-        public UniTask UpdateRecruitingItems(CatState[] catState, int cost);
+        public UniTask UpdateRecruitingItems(CatState[] catState, int cost, bool canHire);
         public void Unlock();
     }
 }

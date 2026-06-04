@@ -15,7 +15,7 @@ MonoBehaviour:
   <MaxTemperature>k__BackingField: 150
   <OverheatThreshold>k__BackingField: 0.8
   <OverheatMultiplier>k__BackingField: 0.2
-  <BaseProduction>k__BackingField: 1
+  <BaseProduction>k__BackingField: 3
   <LevelProductionMultiplier>k__BackingField: 2
   <BaseTemperatureIncrease>k__BackingField: 4
   <LevelTemperatureMultiplier>k__BackingField: 2

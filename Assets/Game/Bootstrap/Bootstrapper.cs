@@ -1,3 +1,5 @@
+using System;
+using Cysharp.Threading.Tasks;
 using Reacative.Domain.Definitions;
 using Reacative.Domain.Definitions.CatContainers;
 using Reacative.Domain.State;
@@ -10,6 +12,8 @@ using Reacative.Infrastructure.Services;
 using Reacative.Infrastructure.Time;
 using Reacative.Presentation.Configs;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
+using Object = UnityEngine.Object;
 
 namespace Reacative.Bootstrap
 {
@@ -17,6 +21,7 @@ namespace Reacative.Bootstrap
     {
         private static void SystemsInit()
         {
+            LanguageBoot();
             var timeProvider = new TimeProvider();
             var config = LoadConfig();
             var uiConfig = LoadUIConfig();
@@ -59,6 +64,8 @@ namespace Reacative.Bootstrap
         private static void SetupCatsContainers(CatsManager catsManager)
         {
             catsManager.AddDefinition(ReactorState.ID, new ReactorContainerDefinition());
+            catsManager.AddDefinition(CoolerState.ID, new CoolerContainerDefinition());
+            catsManager.AddDefinition(TurbineState.ID, new TurbineContainerDefinition());
         }
 
         private static void SetupPurchasableBuildings(BuildingShop shop, GameConfig gameConfig)
@@ -88,6 +95,46 @@ namespace Reacative.Bootstrap
         private static UIConfig LoadUIConfig()
         {
             return Resources.Load<UIConfig>("UIConfig");
+        }
+
+        private static void LanguageBoot()
+        {
+            var args = Environment.GetCommandLineArgs();
+            string lang = null;
+            foreach (var arg in args)
+            {
+                string prefix = "-lang=";
+                if (arg.StartsWith(prefix))
+                {
+                    lang = arg.Substring(prefix.Length);
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(lang))
+            {
+                return;
+            }
+            
+            ApplyLanguage(lang).Forget();
+        }
+
+        private static async UniTask ApplyLanguage(string code)
+        {
+            await LocalizationSettings.InitializationOperation.Task;
+
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+
+            var selected = locales.Find(l => l.Identifier.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
+
+            if (selected == null)
+            {
+                Debug.LogWarning($"Couldn't find locale code {code}. Default selected");
+                return;
+            }
+            
+            LocalizationSettings.SelectedLocale = selected;
+            Debug.Log("Language loaded");
         }
     }
 }

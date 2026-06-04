@@ -18,6 +18,7 @@ namespace Reacative.Infrastructure.UI.Recruiting
 
         public RecruitingController(Game game)
         {
+            _catsManager = ServiceLocator.GetService<CatsManager>();
             _game = game;
             _game.OnStateChanged += (oldState, newState) =>
             {
@@ -26,9 +27,8 @@ namespace Reacative.Infrastructure.UI.Recruiting
                     return;
                 }
                 
-                Update(View, newState);
+                Update(View, newState, _catsManager);
             };
-            _catsManager = ServiceLocator.GetService<CatsManager>();
 
             _game.Subscribe(s => s.SpecialistState.IsBought, OnUnlock);
         }
@@ -53,7 +53,7 @@ namespace Reacative.Infrastructure.UI.Recruiting
 
         protected override void OnAssign(IRecruitingView view)
         {
-            Update(view, _game.CurrentState);
+            Update(view, _game.CurrentState, _catsManager);
             view.OnHire += OnHire;
         }
 
@@ -71,10 +71,12 @@ namespace Reacative.Infrastructure.UI.Recruiting
             
         }
 
-        private static void Update(IRecruitingView view, GameState gameState)
+        private static void Update(IRecruitingView view, GameState gameState, CatsManager manager)
         {
             var availableCats = gameState.GetAvailableCats();
-            view?.UpdateRecruitingItems(availableCats, 100).Forget();
+            var cost = manager.GetHireCost();
+            var resource = gameState.ResourceBankState.Energy;
+            view?.UpdateRecruitingItems(availableCats, cost, resource>=cost).Forget();
         }
 
         protected override async void OnSetActive(bool active)

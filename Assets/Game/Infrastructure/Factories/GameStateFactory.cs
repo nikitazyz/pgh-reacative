@@ -10,7 +10,7 @@ namespace Reacative.Infrastructure.Factories
         public static GameState InitialGameState(long currentTime, bool isReactorActiveAtStart = false)
         {
             return new GameState(currentTime, 
-            new ResourceBankState(100, 0, 0),
+            new ResourceBankState(0, 0, 0),
             new ReactorState(
                 0,
                 0,
@@ -21,7 +21,8 @@ namespace Reacative.Infrastructure.Factories
                 0,
                 false,
                 0,
-                false
+                false,
+                ImmutableList<string>.Empty
             ),
             new CoolerState(
                 0,

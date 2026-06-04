@@ -47,6 +47,22 @@ MonoBehaviour:
     m_Key: locked_cats_management
     m_Metadata:
       m_Items: []
+  - m_Id: 10095794039283712
+    m_Key: press_to_continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10114597888450560
+    m_Key: ractor_automation_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10115125489950720
+    m_Key: cooler_automation_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10115555385139200
+    m_Key: turbine_automation_description
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

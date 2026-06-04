@@ -68,14 +68,14 @@ namespace Reacative.Domain.Definitions.CatContainers
 
         public bool CanSetCat(GameState gameState, string id)
         {
-            var cats = gameState.ReactorState.ActiveCats;
+            var cats = GetCatsContainer(gameState).ActiveCats;
             var catState = gameState.GeneratedCats.Find(c => c.Id == id);
             return cats.Count < 3 && !cats.Contains(id) && string.IsNullOrEmpty(catState.BuildingId);
         }
 
         public bool CanRemoveCat(GameState gameState, string id)
         {
-            var cats = gameState.ReactorState.ActiveCats;
+            var cats = GetCatsContainer(gameState).ActiveCats;
             return cats.Contains(id);
         }
 

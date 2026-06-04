@@ -12,7 +12,8 @@ namespace Reacative.Presentation.Cats
 {
     public class CatsDisplay : MonoBehaviour
     {
-        [SerializeField] private List<SpriteRenderer> _cats;
+        private static readonly int Skin = Animator.StringToHash("Skin");
+        [SerializeField] private List<Animator> _cats;
         [SerializeField] private BuildingsSet.BuildingType _buildingType;
 
         private Game _game;
@@ -37,6 +38,8 @@ namespace Reacative.Presentation.Cats
                     continue;
                 }
                 _cats[i].gameObject.SetActive(true);
+                var color = activeCats[i].Color;
+                _cats[i].SetFloat(Skin, (int)color);
             }
         }
     }

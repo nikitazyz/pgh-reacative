@@ -1,11 +1,14 @@
+using System.Collections.Immutable;
+
 namespace Reacative.Domain.State
 {
     public record TurbineState(
         int Level,
         bool IsActive,
         long ActivationTime,
-        bool IsBought
-    ) : IPurchasableBuildingState
+        bool IsBought,
+        ImmutableList<string> ActiveCats
+    ) : IPurchasableBuildingState, ICatsContainerState
     {
         public override string ToString()
         {

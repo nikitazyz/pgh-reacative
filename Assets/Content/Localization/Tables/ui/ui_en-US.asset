@@ -52,6 +52,23 @@ MonoBehaviour:
     m_Localized: Buy <b>Specialist Headquarters</b> to unlock.
     m_Metadata:
       m_Items: []
+  - m_Id: 10095794039283712
+    m_Localized: Press to contine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10114597888450560
+    m_Localized: They automatically turn off the reactor when it overheats and turn
+      it on again when it cools down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10115125489950720
+    m_Localized: The reactor temperature is periodically reset to a certain value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10115555385139200
+    m_Localized: Automatically accelerate the turbine and reduce recharge time.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

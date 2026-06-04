@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Presentation::Reacative.Presentation.Configs.CatsResourcePack
   _catColorAssets:
   - _catColor: 0
-    _icon: {fileID: -880463443, guid: 1adc65cfc8592b2408412f6dda8fa57d, type: 3}
+    _icon: {fileID: 21300000, guid: 54786eb23b2ebef4b9bfdf3fcbb65d1c, type: 3}
   - _catColor: 1
-    _icon: {fileID: 1840055453, guid: 1adc65cfc8592b2408412f6dda8fa57d, type: 3}
+    _icon: {fileID: 21300000, guid: 6977a14736c0a704389d58cffe800a03, type: 3}
   - _catColor: 2
-    _icon: {fileID: 340251042, guid: 1adc65cfc8592b2408412f6dda8fa57d, type: 3}
+    _icon: {fileID: 21300000, guid: 5e3f05fca20730d46af9354542daa877, type: 3}
   - _catColor: 3
-    _icon: {fileID: -108288937, guid: 1adc65cfc8592b2408412f6dda8fa57d, type: 3}
+    _icon: {fileID: 21300000, guid: 164815deb8721b944a979db7b755141f, type: 3}
   - _catColor: 4
-    _icon: {fileID: -1831524224, guid: 1adc65cfc8592b2408412f6dda8fa57d, type: 3}
+    _icon: {fileID: 21300000, guid: 54d9690f92deae14bbf8661ea242c6fd, type: 3}
+  - _catColor: 5
+    _icon: {fileID: 21300000, guid: ec66a92f850e35049a5b8cac9e18331e, type: 3}

@@ -35,15 +35,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8566869647679488
-    m_Localized: Reactor Description
+    m_Localized: The reactor produces the energy. If you won't watch the temperature,
+      it will overheat.
     m_Metadata:
       m_Items: []
   - m_Id: 8567041215684608
-    m_Localized: Cooler Description
+    m_Localized: Additionally cools the reactor.
     m_Metadata:
       m_Items: []
   - m_Id: 8567098618929152
-    m_Localized: Turbine Description
+    m_Localized: The turbine allows you to speed up production for some time.
     m_Metadata:
       m_Items: []
   - m_Id: 8567239518183424
@@ -56,6 +57,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9763685676343296
     m_Localized: Generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9707580325617664
+    m_Localized: Here you can hire new employees.
     m_Metadata:
       m_Items: []
   references:

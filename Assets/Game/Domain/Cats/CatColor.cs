@@ -2,10 +2,11 @@ namespace Reacative.Domain.Cats
 {
     public enum CatColor
     {
-        Orange,
-        White,
-        Dark,
-        Coffee,
-        Gray
+        Jastin,
+        Ridji,
+        Rokki,
+        Stels,
+        Tarzan,
+        Ghost
     }
 }

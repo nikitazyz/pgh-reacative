@@ -116,6 +116,26 @@ namespace Reacative.Domain
             return CurrentState.ReactorState.Temperature >=
                    GetMaxTemperature() * Config.ReactorConfig.OverheatThreshold;
         }
+
+        public double GetTurbineReloadProgress()
+        {
+            var turbineState = CurrentState.TurbineState;
+            var reactorState = CurrentState.ReactorState;
+            if (!reactorState.IsActive || turbineState.IsActive)
+            {
+                return 0;
+            }
+            
+            var turbineTime = CurrentState.TurbineState.ActivationTime;
+            
+            var chargeStartTime = turbineTime + (long)Config.TurbineConfig.TurbineTime * 1000;
+            var currentTime = _timeProvider.GetTime();
+
+            var fullChargeTime = (long)Config.TurbineConfig.ReloadTime * 1000;
+            var timeFromChargeStart = currentTime - chargeStartTime;
+            
+            return Math.Clamp((double)timeFromChargeStart / fullChargeTime, 0.0, 1.0);
+        }
     }
     
     public delegate void ChangeStateHandler(GameState oldState, GameState newState);

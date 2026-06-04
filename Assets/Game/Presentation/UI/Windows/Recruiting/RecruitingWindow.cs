@@ -28,7 +28,7 @@ namespace Reacative.Presentation.UI
             _lockPanel.SetActive(true);
         }
 
-        public async UniTask UpdateRecruitingItems(CatState[] catState, int cost)
+        public async UniTask UpdateRecruitingItems(CatState[] catState, int cost, bool canHire)
         {
             foreach (var item in 
                      _recruitingItems.Keys.Where(item => catState.All(c => c.Id != item)).ToArray())
@@ -42,7 +42,7 @@ namespace Reacative.Presentation.UI
                 Debug.Log("Adding recruiting item: " + state.Id);
                 if (_recruitingItems.TryGetValue(state.Id, out var recruitingItem))
                 {
-                    await recruitingItem.UpdateCost(cost);
+                    await recruitingItem.UpdateCost(cost, canHire);
                     continue;
                 }
 
@@ -50,7 +50,7 @@ namespace Reacative.Presentation.UI
                 var item = _freeRecruitingItems.FirstOrDefault() ?? CreateRecruitingItem();
                 _freeRecruitingItems.Remove(item);
                 item.SetCatState(state);
-                await item.UpdateCost(cost);
+                await item.UpdateCost(cost, canHire);
                 _recruitingItems.Add(state.Id, item);
             }
 
